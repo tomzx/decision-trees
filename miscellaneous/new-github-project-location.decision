@@ -1,0 +1,6 @@
+alex.say I want to create a new github project
+if tom.ask Will it have many parts/subprojects?:
+	tom.say Create a new organization
+	tom.say Create project in new organization
+else:
+	tom.say Create project in personal account

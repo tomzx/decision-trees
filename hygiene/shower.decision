@@ -1,0 +1,37 @@
+# Precondition: naked
+
+go to my room
+pick new underwear
+go to bathroom
+undress(none)
+get towel
+get hand towel
+start running water
+test water temperature
+start shower
+get in shower
+put shower shell on hand towel
+clean torso
+clean left arm
+clean right arm
+clean genital
+clean left leg
+clean right leg
+clean back
+clean face
+clean hair
+stop shower
+towel hair
+towel face
+towel torso
+towel left arm
+towel right arm
+get out of shower
+towel genital
+towel left leg
+towel right leg
+dress(underwear) # todo: specify we are putting the new underwear
+go to laundry room/location
+put towel in laundry basket
+put hand towel in laundy basket
+put old underwear in laundy basket

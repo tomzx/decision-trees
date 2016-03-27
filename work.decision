@@ -1,0 +1,2 @@
+for item in work_items:
+	execute(item)

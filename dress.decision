@@ -1,0 +1,13 @@
+# params: to (put everything until that part, included)
+# Assumes that if the item is already worn, the step is skipped with nothing happenning
+
+put underwear
+# Note: pants/socks may be interverted
+# TODO: It is possible to put pants and a shirt without wearing any socks
+put socks
+put pants
+put shirt
+put shoes # Depends on whether or not we put socks
+put coat
+put hat
+put gloves/mittens

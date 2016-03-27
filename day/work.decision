@@ -1,0 +1,17 @@
+...
+get ready for work
+if (ask('Is it cold outside?')):
+	dress(gloves) # TODO: there might be a clearer way to say we put on a coat, hat and gloves
+else:
+	dress(shoes)
+transit work (0900-0945)
+unpack lunch
+work
+stand up (1100)
+work
+work-lunch()
+work
+transit home (1800-1845)
+...
+dinner()
+...

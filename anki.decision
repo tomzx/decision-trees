@@ -1,0 +1,5 @@
+open anki
+study deck Tom
+for card in studied_cards:
+	recall card
+record day statistics

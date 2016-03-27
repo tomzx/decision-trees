@@ -1,0 +1,11 @@
+# params: to (remove everything until that part, included)
+# Assumes that if the item is not worn, the step is skipped with nothing happenning
+
+remove gloves/mittens
+remove hat
+remove coat
+remove shoes
+remove shirt
+remove pants # Note: pants/socks may be interverted
+remove socks
+remove underwear

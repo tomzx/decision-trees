@@ -1,0 +1,22 @@
+# We assume this test has already been done if (ask('Do I need to shave?')):
+
+go to my room
+pick razor
+pick shaving cream
+go to bathroom
+put shaving cream on face
+wash hands
+start running water in sink
+# todo: add razor cleaning procedure
+shave neck
+shave chin
+shave lower lip
+shave upper lip
+shave left cheek
+shave left sideburn
+shave right cheek
+shave right sideburn
+clean razor
+go to my room
+store shaving cream
+store razor

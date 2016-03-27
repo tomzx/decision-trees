@@ -6,9 +6,11 @@
 
 # How to use
 
-The diagrams use the [mermaid](https://github.com/knsv/mermaid) syntax.
+Start by taking a look at `main.decision`. From there, you will be guided to consult its subprograms and their subprograms and so on like a regular program.
 
-To visualize the decision tree diagrams, I suggest you use [Haroopad](http://pad.haroopress.com/). You may also visualize the graphs using the [mermaid live editor](http://knsv.github.io/mermaid/live_editor/).
+# Notes
+
+The current description language is not defined yet but looks a lot like `python`. However, you will soon realize that the language is not all legal `python`. The purpose of this choice is to make it easy for anyone to read the procedure without having it being cluttered with syntactic elements. This allows me to focus on the features and properties that would be required to make the language as concise and relevant as possible.
 
 ## Sources
 

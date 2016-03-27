@@ -1,0 +1,23 @@
+wake-up()
+if (ask('Is it a workout day?')):
+	health/exercise()
+shower() (0700-0715) # the time is only true for work days
+shave()?
+go to my room
+put on deodorant
+dress(shirt)
+breakfast() (0715-0730) # he time is only true for work days
+switch (ask('What day is it?')):
+	'work day':
+		day/work()
+	'home work day':
+		day/home-work()
+	'off day':
+		day/off()
+undress(shoes)
+change(pants, shorts)
+entertainment()?
+anki()
+commit to github
+entertainment()?
+sleep()
