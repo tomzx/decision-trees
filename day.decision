@@ -3,6 +3,7 @@ if (ask('Is it a workout day?')):
 	health/exercise()
 shower() (0700-0715) # the time is only true for work days
 shave()?
+nail-clipping()?
 go to my room
 put on deodorant
 dress(shirt)
