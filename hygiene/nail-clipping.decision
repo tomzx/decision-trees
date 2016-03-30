@@ -1,6 +1,6 @@
-go to my room
+../generic/go-to(my room)
 pick nail clipper
-go to bathroom
+../generic/go-to(bathroom)
 close toilet seat
 sit down on toilet seat
 bring trash bin close
@@ -25,5 +25,5 @@ trim right middle finger
 trim right ring finger
 trim right little finger
 put trash bin at its initial location
-go to my room
+../generic/go-to(my room)
 store nail clipper

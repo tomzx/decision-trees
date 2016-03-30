@@ -1,0 +1,15 @@
+if (ask('Did a bring a meal?')):
+	get lunchbox from fridge
+	unpack lunchbox
+	if (ask('Does the meal require to be heated up?')):
+		heat up meal in microwave
+else:
+	decide what/where to eat
+	get out of office
+	../generic/go-to(restaurant)
+	order
+	return to office
+eat meal
+throw away garbage
+if (ask('Did a bring a meal?')):
+	put away lunchbox

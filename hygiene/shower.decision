@@ -3,7 +3,7 @@
 go to my room
 pick new underwear
 go to bathroom
-undress(none)
+../dress/undress(none)
 get towel
 get hand towel
 start running water
@@ -30,7 +30,7 @@ get out of shower
 towel genital
 towel left leg
 towel right leg
-dress(underwear) # todo: specify we are putting the new underwear
+../dress/dress(underwear) # todo: specify we are putting the new underwear
 go to laundry room/location
 put towel in laundry basket
 put hand towel in laundy basket

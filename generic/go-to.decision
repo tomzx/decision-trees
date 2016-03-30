@@ -1,0 +1,2 @@
+def go-to(location):
+	go to location

@@ -3,7 +3,7 @@
 
 put underwear
 # Note: pants/socks may be interverted
-# TODO: It is possible to put pants and a shirt without wearing any socks
+# todo: It is possible to put pants and a shirt without wearing any socks
 put socks
 put pants
 put shirt

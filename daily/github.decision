@@ -1,0 +1,7 @@
+if(ask('Did I commit something on github today?')):
+	return
+
+find a project to work on
+implement change
+git commit
+git push

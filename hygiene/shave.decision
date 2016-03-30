@@ -1,9 +1,9 @@
 # We assume this test has already been done if (ask('Do I need to shave?')):
 
-go to my room
+../generic/go-to(my room)
 pick razor
 pick shaving cream
-go to bathroom
+../generic/go-to(bathroom)
 put shaving cream on face
 wash hands
 start running water in sink
@@ -17,6 +17,6 @@ shave left sideburn
 shave right cheek
 shave right sideburn
 clean razor
-go to my room
+../generic/go-to(my room)
 store shaving cream
 store razor

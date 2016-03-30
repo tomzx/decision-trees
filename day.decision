@@ -1,13 +1,9 @@
-wake-up()
+daily/wake-up()
 if (ask('Is it a workout day?')):
 	health/exercise()
-shower() (0700-0715) # the time is only true for work days
-shave()?
-nail-clipping()?
-go to my room
-put on deodorant
-dress(shirt)
-breakfast() (0715-0730) # he time is only true for work days
+daily/hygiene()
+dress/dress(shirt)
+eat/breakfast() (0715-0730) # he time is only true for work days
 switch (ask('What day is it?')):
 	'work day':
 		day/work()
@@ -15,10 +11,8 @@ switch (ask('What day is it?')):
 		day/home-work()
 	'off day':
 		day/off()
-undress(shoes)
-change(pants, shorts)
-entertainment()?
-anki()
-commit to github
-entertainment()?
-sleep()
+generic/entertainment()?
+daily/anki()
+daily/github()
+generic/entertainment()?
+daily/sleep()
