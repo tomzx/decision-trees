@@ -1,9 +1,10 @@
+from body import Body
+from clothes import Clothes
 import dress.dress
 import dress.undress
 import generic.go_to
 import generic.drop
 import generic.pick
-from body import Body
 
 def cleanWithHandTowel(bodyPart):
 	print('clean %s' % bodyPart)
@@ -12,18 +13,21 @@ def dryTowel(bodyPart):
 	print('towel %s' % bodyPart)
 
 def call():
-	# Precondition: naked
-
 	generic.go_to.call('my room')
-	print('pick new underwear')
+	generic.pick.call('new underwear')
 	generic.go_to.call('bathroom')
-	dress.undress.call('none')
-	print('get towel')
-	print('get hand towel')
+	generic.drop.call('new underwear', 'counter')
+	dress.undress.call(None)
+	generic.pick.call('towel')
+	generic.pick.call('hand towel')
+	generic.drop.call('towel', 'toilet seat')
+	generic.drop.call('hand towel', 'shower handle')
 	print('start running water')
 	print('test water temperature')
+	print('close shower curtain')
 	print('start shower')
 	generic.go_to.call('shower')
+	generic.pick.call('hand towel')
 	print('put shower gel on hand towel')
 	cleanWithHandTowel(Body.Torso)
 	cleanWithHandTowel(Body.LeftArm)
@@ -33,18 +37,24 @@ def call():
 	cleanWithHandTowel(Body.RightLeg)
 	cleanWithHandTowel(Body.Back)
 	cleanWithHandTowel(Body.Face)
+	generic.drop.call('hand towel', 'bath rim')
 	cleanWithHandTowel(Body.Hair)
 	print('stop shower')
+	print('stop running water')
+	print('open shower curtain')
+	generic.pick.call('towel')
 	dryTowel(Body.Hair)
 	dryTowel(Body.Face)
 	dryTowel(Body.Torso)
+	dryTowel(Body.Back)
 	dryTowel(Body.LeftArm)
 	dryTowel(Body.RightArm)
 	print('get out of shower')
 	dryTowel(Body.Genital)
 	dryTowel(Body.LeftLeg)
 	dryTowel(Body.RightLeg)
-	dress.dress.call('underwear') # todo: specify we are putting the new underwear
+	generic.drop.call('towel', 'toilet set')
+	dress.dress.call(Clothes.Underwear) # todo: specify we are putting the new underwear
 	generic.pick.call('towel')
 	generic.pick.call('hand towel')
 	generic.pick.call('old underwear')

@@ -22,6 +22,7 @@ def call(to):
 	]
 
 	for cloth in clothes:
+		# todo: pick
 		wear(cloth)
 		if (cloth == to):
 			break

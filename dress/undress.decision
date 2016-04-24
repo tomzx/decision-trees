@@ -19,5 +19,6 @@ def call(to):
 
 	for cloth in clothes:
 		remove(cloth)
+		# todo: drop
 		if (cloth == to):
 			break
