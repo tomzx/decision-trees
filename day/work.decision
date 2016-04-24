@@ -1,4 +1,6 @@
 from clothes import Clothes
+import computer.sleep
+import computer.wake_up
 import dress.change
 import dress.dress
 import dress.undress
@@ -14,6 +16,7 @@ def call():
 	print('get ready for work')
 	print('prepare lunch')
 	dress.pick_clothes.call()
+	computer.sleep.call()
 	# transit work (0900-0945)
 	generic.go_to.call(Location.Work)
 	print('unpack lunch from backpack to fridge')
@@ -26,6 +29,7 @@ def call():
 	generic.go_to.call(Location.Home)
 	dress.undress.call(Clothes.Shoes)
 	dress.change.call(Clothes.Pants, Clothes.Shorts)
+	computer.wake_up.call()
 	# ...
 	eat.dinner.call()
 

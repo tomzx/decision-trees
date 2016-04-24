@@ -2,11 +2,11 @@ import computer.browse
 from generic.ask import ask
 
 def call():
-	if(not ask('Did I commit something on github today?')):
+	if(ask('Did I commit something on github today?')):
 		return
 
 	print('find a project to work on')
 	print('implement change')
 	print('git commit')
 	print('git push')
-	computer.browse('github.com')
+	computer.browse.call('github.com')

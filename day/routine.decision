@@ -1,5 +1,6 @@
 from clothes import Clothes
 import computer.login
+import computer.sleep
 import computer.wake_up
 import computer.periodic_check
 import daily.wake_up
@@ -41,4 +42,5 @@ daily.anki.call()
 daily.github.call()
 if (askBoolean('Is there time for entertainment?')):
 	generic.entertainment.call()
+computer.sleep.call()
 daily.sleep.call()
