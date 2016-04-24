@@ -1,6 +1,7 @@
-twitch
-reddit
-gmail
-hexchat/irc
-piano
-bike
+def call():
+	print('twitch')
+	print('reddit')
+	print('gmail')
+	print('hexchat/irc')
+	print('piano')
+	print('bike')

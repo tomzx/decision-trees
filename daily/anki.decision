@@ -1,5 +1,7 @@
-open anki
-study deck Tom
-for card in studied_cards:
-	recall card
-record day statistics
+def call():
+	print('open anki')
+	print('study deck Tom')
+	studied_cards = []
+	for card in studied_cards:
+		print('recall card')
+	print('record day statistics')

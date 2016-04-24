@@ -1,0 +1,36 @@
+import generic.go_to
+import generic.pick
+
+def trimNail(nail):
+	print('trim %s' % nail)
+
+def call():
+	generic.go_to.call('my room')
+	generic.pick.call('nail clipper')
+	generic.go_to.call('bathroom')
+	print('close toilet seat')
+	print('sit down on toilet seat')
+	print('bring trash bin close')
+	trimNail('left little toe')
+	trimNail('left ring toe')
+	trimNail('left middle toe')
+	trimNail('left long toe')
+	trimNail('left big toe')
+	trimNail('right little toe')
+	trimNail('right ring toe')
+	trimNail('right middle toe')
+	trimNail('right long toe')
+	trimNail('right big toe')
+	trimNail('left thumb')
+	trimNail('left index finger')
+	trimNail('left middle finger')
+	trimNail('left ring finger')
+	trimNail('left little finger')
+	trimNail('right thumb')
+	trimNail('right index finger')
+	trimNail('right middle finger')
+	trimNail('right ring finger')
+	trimNail('right little finger')
+	print('put trash bin at its initial location')
+	generic.go_to.call('my room')
+	print('store nail clipper')

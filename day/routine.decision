@@ -1,0 +1,44 @@
+from clothes import Clothes
+import computer.login
+import computer.wake_up
+import computer.periodic_check
+import daily.wake_up
+import daily.hygiene
+import daily.anki
+import daily.github
+import daily.sleep
+import day.work
+import day.home_work
+import day.off
+import dress.dress
+import eat.breakfast
+from generic.ask import ask
+from generic.askBoolean import askBoolean
+import generic.go_to
+import generic.entertainment
+import health.exercise
+
+daily.wake_up.call()
+generic.go_to.call('computer')
+computer.wake_up.call()
+computer.login.call()
+computer.periodic_check.call()
+if (askBoolean('Is it a workout day (Wednesday, Friday, Sunday)?')):
+	health.exercise.call()
+daily.hygiene.call()
+dress.dress.call(Clothes.Shirt)
+eat.breakfast.call() # (0715-0730)  the time is only true for work days
+dayValue = ask('What type of day is it? (work, home work, off)')
+if (dayValue == 'work'):
+		day.work.call()
+elif (dayValue == 'home work'):
+		day.home_work.call()
+elif (dayValue == 'off'):
+		day.off.call()
+if (askBoolean('Is there time for entertainment?')):
+	generic.entertainment.call()
+daily.anki.call()
+daily.github.call()
+if (askBoolean('Is there time for entertainment?')):
+	generic.entertainment.call()
+daily.sleep.call()

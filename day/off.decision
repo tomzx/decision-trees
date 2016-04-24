@@ -1,5 +1,10 @@
-entertainment()?
-lunch()
-entertainment()?
-dinner()
-entertainment()?
+import eat.dinner
+import eat.lunch
+import generic.entertainment
+
+def call():
+	generic.entertainment.call()
+	eat.lunch.call()
+	generic.entertainment.call()
+	eat.dinner.call()
+	generic.entertainment.call()

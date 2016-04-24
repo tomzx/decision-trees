@@ -1,22 +1,24 @@
-# We assume this test has already been done if (ask('Do I need to shave?')):
+import generic.go_to
 
-../generic/go-to(my room)
-pick razor
-pick shaving cream
-../generic/go-to(bathroom)
-put shaving cream on face
-wash hands
-start running water in sink
-# todo: add razor cleaning procedure
-shave neck
-shave chin
-shave lower lip
-shave upper lip
-shave left cheek
-shave left sideburn
-shave right cheek
-shave right sideburn
-clean razor
-../generic/go-to(my room)
-store shaving cream
-store razor
+def call():
+	# We assume this test has already been done if (ask('Do I need to shave?')):
+	generic.go_to.call('my room')
+	print('pick razor')
+	print('pick shaving cream')
+	generic.go_to.call('bathroom')
+	print('put shaving cream on face')
+	print('wash hands')
+	print('start running water in sink')
+	# todo: add razor cleaning procedure
+	print('shave neck')
+	print('shave chin')
+	print('shave lower lip')
+	print('shave upper lip')
+	print('shave left cheek')
+	print('shave left sideburn')
+	print('shave right cheek')
+	print('shave right sideburn')
+	print('clean razor')
+	generic.go_to.call('my room')
+	print('store shaving cream')
+	print('store razor')

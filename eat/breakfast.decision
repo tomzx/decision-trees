@@ -1,3 +1,4 @@
-decide what to eat
-prepare meal
-eat meal
+def call():
+	print('decide what to eat')
+	print('prepare meal')
+	print('eat meal')

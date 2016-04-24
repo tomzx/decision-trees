@@ -1,1 +1,3 @@
 # spoon, fork, knife handling procedure
+def call():
+	print('eat')

@@ -1,4 +1,7 @@
-undress(socks)
-lay on horizontal flat surface
-close eye
-switch mode to unconscious/system
+import dress.undress
+
+def call():
+	dress.undress.call('socks')
+	print('lay on horizontal flat surface')
+	print('close eye')
+	print('switch mode to system/unconscious')

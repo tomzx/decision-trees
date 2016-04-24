@@ -1,13 +1,27 @@
+from clothes import Clothes
 # params: to (put everything until that part, included)
 # Assumes that if the item is already worn, the step is skipped with nothing happenning
 
-put underwear
-# Note: pants/socks may be interverted
-# todo: It is possible to put pants and a shirt without wearing any socks
-put socks
-put pants
-put shirt
-put shoes # Depends on whether or not we put socks
-put coat
-put hat
-put gloves/mittens
+def wear(cloth):
+	print('put %s' % cloth)
+
+def call(to):
+	# todo: this should receive a person as parameter which would indicate what this person is wearing
+
+	# Note: pants/socks may be interverted
+	# todo: It is possible to put pants and a shirt without wearing any socks
+	clothes = [
+		Clothes.Underwear,
+		Clothes.Socks,
+		Clothes.Pants,
+		Clothes.Shirt,
+		Clothes.Shoes, # Depends on whether or not we put socks
+		Clothes.Coat,
+		Clothes.Hat,
+		Clothes.Gloves,
+	]
+
+	for cloth in clothes:
+		wear(cloth)
+		if (cloth == to):
+			break

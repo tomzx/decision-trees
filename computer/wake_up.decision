@@ -1,0 +1,3 @@
+def call():
+	print('press any key on the keyboard')
+	print('release pressed key on the keyboard')

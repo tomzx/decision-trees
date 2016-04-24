@@ -1,0 +1,4 @@
+def askBoolean(question):
+	result = input(question)
+	result = result.lower()
+	return result == 'true' or result == 'yes' or result == 'y'

@@ -1,0 +1,7 @@
+def call():
+	print('press windows key')
+	print('release windows key')
+	print('press right key')
+	print('release right key')
+	print('press enter key')
+	print('release enter key')

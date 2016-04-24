@@ -1,4 +1,7 @@
-def change(remove, put):
+import dress.dress
+import dress.undress
+
+def call(remove, put):
 	# todo add rules based on what is currently worn (can't change underwear without removing pants first)
-	remove remove
-	put put
+	dress.undress.call(remove)
+	dress.dress.call(put)

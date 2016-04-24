@@ -1,2 +1,3 @@
-for item in work_items:
-	execute(item)
+def call(work_items):
+	for item in work_items:
+		execute(item)

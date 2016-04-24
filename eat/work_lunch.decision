@@ -1,0 +1,20 @@
+from generic.askBoolean import askBoolean
+import generic.go_to
+
+def call():
+	bringMeal = askBoolean('Did I bring a meal?')
+	if (bringMeal):
+		print('get lunchbox from fridge')
+		print('unpack lunchbox')
+		if (askBoolean('Does the meal require to be heated up?')):
+			print('heat up meal in microwave')
+	else:
+		print('decide what/where to eat')
+		print('get out of office')
+		generic.go_to.call('restaurant')
+		print('order')
+		print('return to office')
+	print('eat meal')
+	print('throw away garbage')
+	if (bringMeal):
+		print('put away lunchbox')

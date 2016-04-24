@@ -1,1 +1,9 @@
-day()
+import imp
+import importlib
+
+# Hook custom file extension so python can recognize and load it
+importlib.machinery.SOURCE_SUFFIXES.insert(0, '.decision')
+
+# print(importlib.machinery.all_suffixes())
+
+import day.routine

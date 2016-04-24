@@ -1,37 +1,54 @@
-# Precondition: naked
+import dress.dress
+import dress.undress
+import generic.go_to
+import generic.drop
+import generic.pick
+from body import Body
 
-go to my room
-pick new underwear
-go to bathroom
-../dress/undress(none)
-get towel
-get hand towel
-start running water
-test water temperature
-start shower
-get in shower
-put shower shell on hand towel
-clean torso
-clean left arm
-clean right arm
-clean genital
-clean left leg
-clean right leg
-clean back
-clean face
-clean hair
-stop shower
-towel hair
-towel face
-towel torso
-towel left arm
-towel right arm
-get out of shower
-towel genital
-towel left leg
-towel right leg
-../dress/dress(underwear) # todo: specify we are putting the new underwear
-go to laundry room/location
-put towel in laundry basket
-put hand towel in laundy basket
-put old underwear in laundy basket
+def cleanWithHandTowel(bodyPart):
+	print('clean %s' % bodyPart)
+
+def dryTowel(bodyPart):
+	print('towel %s' % bodyPart)
+
+def call():
+	# Precondition: naked
+
+	generic.go_to.call('my room')
+	print('pick new underwear')
+	generic.go_to.call('bathroom')
+	dress.undress.call('none')
+	print('get towel')
+	print('get hand towel')
+	print('start running water')
+	print('test water temperature')
+	print('start shower')
+	generic.go_to.call('shower')
+	print('put shower gel on hand towel')
+	cleanWithHandTowel(Body.Torso)
+	cleanWithHandTowel(Body.LeftArm)
+	cleanWithHandTowel(Body.RightArm)
+	cleanWithHandTowel(Body.Genital)
+	cleanWithHandTowel(Body.LeftLeg)
+	cleanWithHandTowel(Body.RightLeg)
+	cleanWithHandTowel(Body.Back)
+	cleanWithHandTowel(Body.Face)
+	cleanWithHandTowel(Body.Hair)
+	print('stop shower')
+	dryTowel(Body.Hair)
+	dryTowel(Body.Face)
+	dryTowel(Body.Torso)
+	dryTowel(Body.LeftArm)
+	dryTowel(Body.RightArm)
+	print('get out of shower')
+	dryTowel(Body.Genital)
+	dryTowel(Body.LeftLeg)
+	dryTowel(Body.RightLeg)
+	dress.dress.call('underwear') # todo: specify we are putting the new underwear
+	generic.pick.call('towel')
+	generic.pick.call('hand towel')
+	generic.pick.call('old underwear')
+	generic.go_to.call('laundry room/location')
+	generic.drop.call('towel', 'laundry basket')
+	generic.drop.call('hand towel', 'laundry basket')
+	generic.drop.call('old underwear', 'laundry basket')

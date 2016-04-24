@@ -1,0 +1,2 @@
+def call(item, location):
+	print('drop %s in/on %s' % (item, location))

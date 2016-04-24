@@ -1,0 +1,7 @@
+from generic.ask import ask
+
+def call():
+	print('switch mode to user/conscious')
+	ask('What day is it?')
+	print('open eye')
+	ask('Where am I?')

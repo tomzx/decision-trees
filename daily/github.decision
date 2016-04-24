@@ -1,7 +1,12 @@
-if(ask('Did I commit something on github today?')):
-	return
+import computer.browse
+from generic.ask import ask
 
-find a project to work on
-implement change
-git commit
-git push
+def call():
+	if(not ask('Did I commit something on github today?')):
+		return
+
+	print('find a project to work on')
+	print('implement change')
+	print('git commit')
+	print('git push')
+	computer.browse('github.com')

@@ -1,0 +1,6 @@
+import computer.browse
+
+def call():
+	computer.browse.call('gmail.com')
+	computer.browse.call('reddit.com')
+	computer.browse.call('github.com')

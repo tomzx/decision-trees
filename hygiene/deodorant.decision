@@ -1,2 +1,5 @@
-../generic/go-to(my room)
-put on deodorant
+import generic.go_to
+
+def call():
+	generic.go_to.call('my room')
+	print('put on deodorant')

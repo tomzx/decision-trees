@@ -1,0 +1,4 @@
+def call():
+	print('type windows login password')
+	print('press enter key')
+	print('release enter key')

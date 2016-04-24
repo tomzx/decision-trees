@@ -1,11 +1,23 @@
 # params: to (remove everything until that part, included)
 # Assumes that if the item is not worn, the step is skipped with nothing happenning
+from clothes import Clothes
 
-remove gloves/mittens
-remove hat
-remove coat
-remove shoes
-remove shirt
-remove pants # Note: pants/socks may be interverted
-remove socks
-remove underwear
+def remove(cloth):
+	print('remove %s' % cloth)
+
+def call(to):
+	clothes = [
+		Clothes.Gloves,
+		Clothes.Hat,
+		Clothes.Coat,
+		Clothes.Shoes,
+		Clothes.Shirt,
+		Clothes.Pants, # Note: pants/socks may be interverted
+		Clothes.Socks,
+		Clothes.Underwear,
+	]
+
+	for cloth in clothes:
+		remove(cloth)
+		if (cloth == to):
+			break

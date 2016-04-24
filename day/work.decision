@@ -1,22 +1,32 @@
-# ...
-get ready for work
-prepare lunch
-if (ask('Is it cold outside?')):
-	../dress/dress(gloves) # todo: there might be a clearer way to say we put on a coat, hat and gloves
-else:
-	../dress/dress(shoes)
-# transit work (0900-0945)
-../generic/go-to(work)
-unpack lunch from backpack to fridge
-../generic/work()
-stand up (1100)
-../generic/work()
-../eat/work-lunch()
-../generic/work()
-# transit home (1800-1845)
-../generic/go-to(home)
-dress/undress(shoes)
-dress/change(pants, shorts)
-# ...
-../eat/dinner()
+from clothes import Clothes
+import dress.change
+import dress.dress
+import dress.undress
+import dress.pick_clothes
+import generic.work
+import generic.go_to
+import eat.work_lunch
+import eat.dinner
+from location import Location
+
+def call():
+	# ...
+	print('get ready for work')
+	print('prepare lunch')
+	dress.pick_clothes.call()
+	# transit work (0900-0945)
+	generic.go_to.call(Location.Work)
+	print('unpack lunch from backpack to fridge')
+	generic.work.call([])
+	print('stand up (1100)')
+	generic.work.call([])
+	eat.work_lunch.call()
+	generic.work.call([])
+	# transit home (1800-1845)
+	generic.go_to.call(Location.Home)
+	dress.undress.call(Clothes.Shoes)
+	dress.change.call(Clothes.Pants, Clothes.Shorts)
+	# ...
+	eat.dinner.call()
+
 # ...

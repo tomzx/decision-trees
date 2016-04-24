@@ -1,0 +1,16 @@
+from generic.askBoolean import askBoolean
+import eat.dinner
+import eat.lunch
+import generic.work
+import plan.home_work
+
+def call():
+	plan.home_work.call()
+	print('record day plan video')
+	generic.work.call([])
+	eat.lunch.call()
+	generic.work.call([])
+	eat.dinner.call()
+	if (askBoolean('Is there work remaining for the day?')):
+		generic.work.call([])
+	print('record day completion video')
