@@ -1,0 +1,8 @@
+import generic.drop
+import generic.pick
+
+def call():
+	generic.pick.call('dental floss')
+	print('floss top gum from right to left')
+	print('floss bottom gum from right to left')
+	generic.drop.call('dental floss', 'garbage bin')

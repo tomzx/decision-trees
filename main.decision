@@ -1,9 +1,14 @@
-import imp
+import imp # required by importlib
 import importlib
+from person import Person
 
 # Hook custom file extension so python can recognize and load it
+
 importlib.machinery.SOURCE_SUFFIXES.insert(0, '.decision')
 
 # print(importlib.machinery.all_suffixes())
 
 import day.routine
+
+person = Person()
+day.routine.call(person)

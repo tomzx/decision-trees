@@ -1,7 +1,10 @@
 from generic.ask import ask
 
-def call():
+def call(person):
 	print('switch mode to user/conscious')
-	ask('What day is it?')
+	day = ask('What day is it?')
+	day = day.lower()
 	print('open eye')
-	ask('Where am I?')
+	location = ask('Where am I?')
+	location = location.lower()
+	person.location = location

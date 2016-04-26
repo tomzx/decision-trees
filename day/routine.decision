@@ -18,29 +18,35 @@ from generic.askBoolean import askBoolean
 import generic.go_to
 import generic.entertainment
 import health.exercise
+import hygiene.buccal
 
-daily.wake_up.call()
-generic.go_to.call('computer')
-computer.wake_up.call()
-computer.login.call()
-computer.periodic_check.call()
-if (askBoolean('Is it a workout day (Wednesday, Friday, Sunday)?')):
-	health.exercise.call()
-daily.hygiene.call()
-dress.dress.call(Clothes.Shirt)
-eat.breakfast.call() # (0715-0730)  the time is only true for work days
-dayValue = ask('What type of day is it? (work, home work, off)')
-if (dayValue == 'work'):
-		day.work.call()
-elif (dayValue == 'home work'):
-		day.home_work.call()
-elif (dayValue == 'off'):
-		day.off.call()
-if (askBoolean('Is there time for entertainment?')):
-	generic.entertainment.call()
-daily.anki.call()
-daily.github.call()
-if (askBoolean('Is there time for entertainment?')):
-	generic.entertainment.call()
-computer.sleep.call()
-daily.sleep.call()
+def call(person):
+	daily.wake_up.call(person)
+
+	if (person.location == 'home'):
+		generic.go_to.call('computer')
+		computer.wake_up.call()
+		computer.login.call()
+		computer.periodic_check.call()
+	if (askBoolean('Is it a workout day (Wednesday, Friday, Sunday)?')):
+		health.exercise.call()
+	daily.hygiene.call()
+	dress.dress.call(Clothes.Shirt)
+	eat.breakfast.call() # (0715-0730)  the time is only true for work days
+	# this question is constrained by the current location
+	dayValue = ask('What type of day is it? (work, home work, off)')
+	if (dayValue == 'work'):
+			day.work.call()
+	elif (dayValue == 'home work'):
+			day.home_work.call()
+	elif (dayValue == 'off'):
+			day.off.call()
+	if (askBoolean('Is there time for entertainment?')):
+		generic.entertainment.call()
+	daily.anki.call()
+	daily.github.call()
+	if (askBoolean('Is there time for entertainment?')):
+		generic.entertainment.call()
+	hygiene.buccal.call()
+	computer.sleep.call()
+	daily.sleep.call()
