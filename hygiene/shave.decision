@@ -1,7 +1,6 @@
 import generic.go_to
 
 def call():
-	# We assume this test has already been done if (ask('Do I need to shave?')):
 	generic.go_to.call('my room')
 	print('pick razor')
 	print('pick shaving cream')

@@ -4,6 +4,7 @@ def call(person):
 	print('switch mode to user/conscious')
 	day = ask('What day is it?')
 	day = day.lower()
+	person.day = day
 	print('open eye')
 	location = ask('Where am I?')
 	location = location.lower()

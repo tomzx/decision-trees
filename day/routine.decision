@@ -28,9 +28,9 @@ def call(person):
 		computer.wake_up.call()
 		computer.login.call()
 		computer.periodic_check.call()
-	if (askBoolean('Is it a workout day (Wednesday, Friday, Sunday)?')):
+	if (person.day in ['wednesday', 'friday', 'sunday']):
 		health.exercise.call()
-	daily.hygiene.call()
+	daily.hygiene.call(person)
 	dress.dress.call(Clothes.Shirt)
 	eat.breakfast.call() # (0715-0730)  the time is only true for work days
 	# this question is constrained by the current location

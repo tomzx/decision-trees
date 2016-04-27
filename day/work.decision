@@ -12,12 +12,11 @@ import eat.dinner
 from location import Location
 
 def call():
-	# ...
 	print('get ready for work')
 	print('prepare lunch')
 	dress.pick_clothes.call()
 	computer.sleep.call()
-	# transit work (0900-0945)
+	print('transit work (0900-0945)')
 	generic.go_to.call(Location.Work)
 	print('unpack lunch from backpack to fridge')
 	generic.work.call([])
@@ -25,12 +24,9 @@ def call():
 	generic.work.call([])
 	eat.work_lunch.call()
 	generic.work.call([])
-	# transit home (1800-1845)
+	print('transit home (1800-1845)')
 	generic.go_to.call(Location.Home)
 	dress.undress.call(Clothes.Shoes)
 	dress.change.call(Clothes.Pants, Clothes.Shorts)
 	computer.wake_up.call()
-	# ...
 	eat.dinner.call()
-
-# ...
