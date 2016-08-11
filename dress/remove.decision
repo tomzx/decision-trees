@@ -1,0 +1,4 @@
+def call(person, cloth):
+	if cloth in person.clothes:
+		person.clothes.remove(cloth)
+		print('remove %s' % cloth)

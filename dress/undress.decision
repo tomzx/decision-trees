@@ -1,26 +1,25 @@
-# params: to (remove everything until that part, included)
-# Assumes that if the item is not worn, the step is skipped with nothing happenning
 from clothes import Clothes
+import dress.remove
 
-def remove(cloth):
-	print('remove %s' % cloth)
-
+# params: to (remove everything until that part, included)
 def call(person, to):
 	# todo: possibly support some sort of planning of where the cloth item should be dropped
 
+	# todo: support a more complicated/configurable state machine
 	clothes = [
 		Clothes.Gloves,
 		Clothes.Hat,
 		Clothes.Coat,
 		Clothes.Shoes,
 		Clothes.Shirt,
-		Clothes.Pants, # Note: pants/socks may be interverted
+		Clothes.Shorts,
+		Clothes.Pants,
 		Clothes.Socks,
 		Clothes.Underwear,
 	]
 
 	for cloth in clothes:
-		remove(cloth)
+		dress.remove.call(person, cloth)
 		# todo: drop
 		if (cloth == to):
 			break

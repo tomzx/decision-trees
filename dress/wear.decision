@@ -1,0 +1,4 @@
+def call(person, cloth):
+	if cloth not in person.clothes:
+		person.clothes.add(cloth)
+		print('put %s' % cloth)
