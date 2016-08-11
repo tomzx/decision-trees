@@ -6,6 +6,9 @@ def brush(teeth):
 
 def call():
 	generic.pick.call('toothbrush')
+	generic.pick.call('toothpaste')
+	print('apply toothpaste to toothbrush')
+	generic.drop.call('toothpaste', 'dental kit')
 	brush('outside top left')
 	brush('outside top front')
 	brush('outside top right')

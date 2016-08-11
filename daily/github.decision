@@ -1,8 +1,8 @@
 import computer.browse
-from generic.ask import ask
+from generic.askBoolean import askBoolean
 
 def call():
-	if(ask('Did I commit something on github today?')):
+	if(askBoolean('Did I commit something on github today?')):
 		return
 
 	print('find a project to work on')

@@ -1,11 +1,16 @@
 from generic.ask import ask
+from datetime import date
+import calendar
 
 def call(person):
 	print('switch mode to user/conscious')
-	day = ask('What day is it?')
+	today = date.today()
+	today = calendar.day_name[today.weekday()]
+	day = ask('What day is it? (monday,tuesday,wednesday,thursday,friday,saturday,sunday) (default: %s)' % today)
+	day = day if day else today
 	day = day.lower()
 	person.day = day
-	print('open eye')
+	print('open eyes')
 	location = ask('Where am I?')
 	location = location.lower()
 	person.location = location

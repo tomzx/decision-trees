@@ -7,6 +7,7 @@ def wear(cloth):
 
 def call(to):
 	# todo: this should receive a person as parameter which would indicate what this person is wearing
+	# todo: possibly support some sort of planning of where the cloth item should be taken from
 
 	# Note: pants/socks may be interverted
 	# todo: It is possible to put pants and a shirt without wearing any socks
