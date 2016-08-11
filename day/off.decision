@@ -2,9 +2,9 @@ import eat.dinner
 import eat.lunch
 import generic.entertainment
 
-def call():
-	generic.entertainment.call()
-	eat.lunch.call()
-	generic.entertainment.call()
-	eat.dinner.call()
-	generic.entertainment.call()
+def call(person):
+	generic.entertainment.call(person)
+	eat.lunch.call(person)
+	generic.entertainment.call(person)
+	eat.dinner.call(person)
+	generic.entertainment.call(person)

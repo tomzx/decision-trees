@@ -1,5 +1,5 @@
-def call(location):
-	# if (person.location == location)
-	# 	return
-	# person.location = location
+def call(person, location):
+	if (person.location == location):
+		return
+	person.location = location
 	print('go to %s' % location)

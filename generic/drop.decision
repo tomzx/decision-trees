@@ -1,2 +1,2 @@
-def call(item, location):
+def call(person, item, location):
 	print('drop %s in/on %s' % (item, location))

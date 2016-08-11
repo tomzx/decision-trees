@@ -24,30 +24,29 @@ def call(person):
 	daily.wake_up.call(person)
 
 	if (person.location == 'home'):
-		generic.go_to.call('computer')
-		computer.wake_up.call()
-		computer.login.call()
-		computer.periodic_check.call()
+		generic.go_to.call(person, 'computer')
+		computer.wake_up.call(person)
+		computer.login.call(person)
+		computer.periodic_check.call(person)
 	if (person.day in ['wednesday', 'friday', 'sunday']):
-		health.exercise.call()
+		health.exercise.call(person)
 	daily.hygiene.call(person)
-	dress.dress.call(Clothes.Shirt)
-	eat.breakfast.call() # (0715-0730)  the time is only true for work days
+	dress.dress.call(person, Clothes.Shirt)
+	eat.breakfast.call(person) # (0715-0730)  the time is only true for work days
 	# this question is constrained by the current location
 	dayValue = ask('What type of day is it? (work, home work, off, uncommon)')
 	if (dayValue == 'work'):
-			day.work.call()
+			day.work.call(person)
 	elif (dayValue == 'home work'):
-			day.home_work.call()
+			day.home_work.call(person)
 	elif (dayValue == 'off'):
-			day.off.call()
+			day.off.call(person)
 	if (askBoolean('Is there time for entertainment?')):
-		generic.entertainment.call()
-	daily.github.call()
-	daily.anki.call()
+		generic.entertainment.call(person)
+	daily.github.call(person)
+	daily.anki.call(person)
 	if (askBoolean('Is there time for entertainment?')):
-		generic.entertainment.call()
-	hygiene.buccal.call()
-	generic.go_to.call('computer')
-	computer.sleep.call()
-	daily.sleep.call()
+		generic.entertainment.call(person)
+	hygiene.buccal.call(person)
+	computer.sleep.call(person)
+	daily.sleep.call(person)

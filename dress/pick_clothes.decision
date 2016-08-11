@@ -3,8 +3,8 @@ import dress.undress
 import dress.dress
 from generic.askBoolean import askBoolean
 
-def call():
+def call(person):
 	if (askBoolean('Is it cold outside?')):
-		dress.dress.call(Clothes.Gloves)  # todo: there might be a clearer way to say we put on a coat, hat and gloves
+		dress.dress.call(person, Clothes.Gloves)  # todo: there might be a clearer way to say we put on a coat, hat and gloves
 	else:
-		dress.dress.call(Clothes.Shoes)
+		dress.dress.call(person, Clothes.Shoes)

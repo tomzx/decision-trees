@@ -1,2 +1,2 @@
-def call():
+def call(person):
 	print('lunch')

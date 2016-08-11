@@ -1,4 +1,4 @@
-def call():
+def call(person):
 	print('decide what to eat')
 	print('prepare meal')
 	print('eat meal')

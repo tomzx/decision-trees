@@ -1,4 +1,4 @@
-def call():
+def call(person):
 	print('twitch')
 	print('reddit')
 	print('gmail')

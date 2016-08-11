@@ -5,7 +5,7 @@ from clothes import Clothes
 def wear(cloth):
 	print('put %s' % cloth)
 
-def call(to):
+def call(person, to):
 	# todo: this should receive a person as parameter which would indicate what this person is wearing
 	# todo: possibly support some sort of planning of where the cloth item should be taken from
 

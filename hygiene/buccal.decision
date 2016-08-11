@@ -1,6 +1,6 @@
 import hygiene.floss
 import hygiene.teeth
 
-def call():
-	hygiene.teeth.call()
-	hygiene.floss.call()
+def call(person):
+	hygiene.teeth.call(person)
+	hygiene.floss.call(person)

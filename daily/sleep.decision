@@ -1,8 +1,8 @@
 import dress.undress
 from clothes import Clothes
 
-def call():
-	dress.undress.call(Clothes.Socks)
+def call(person):
+	dress.undress.call(person, Clothes.Socks)
 	print('lay on horizontal flat surface')
 	print('close eye')
 	print('switch mode to system/unconscious')

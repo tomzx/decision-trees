@@ -4,11 +4,11 @@ import generic.pick
 def brush(teeth):
 	print('brush %s teeth' % teeth)
 
-def call():
-	generic.pick.call('toothbrush')
-	generic.pick.call('toothpaste')
+def call(person):
+	generic.pick.call(person, 'toothbrush')
+	generic.pick.call(person, 'toothpaste')
 	print('apply toothpaste to toothbrush')
-	generic.drop.call('toothpaste', 'dental kit')
+	generic.drop.call(person, 'toothpaste', 'dental kit')
 	brush('outside top left')
 	brush('outside top front')
 	brush('outside top right')
@@ -25,4 +25,4 @@ def call():
 	brush('inside bottom left')
 	brush('inside bottom front')
 	brush('inside bottom right')
-	generic.drop.call('toothbrush', 'dental kit')
+	generic.drop.call(person, 'toothbrush', 'dental kit')

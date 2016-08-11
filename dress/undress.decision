@@ -5,7 +5,7 @@ from clothes import Clothes
 def remove(cloth):
 	print('remove %s' % cloth)
 
-def call(to):
+def call(person, to):
 	# todo: possibly support some sort of planning of where the cloth item should be dropped
 
 	clothes = [

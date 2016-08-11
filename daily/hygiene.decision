@@ -5,10 +5,10 @@ import hygiene.shave
 import hygiene.shower
 
 def call(person):
-	hygiene.shower.call() # (0700-0715) # the time is only true for work days
+	hygiene.shower.call(person) # (0700-0715) # the time is only true for work days
 	if (askBoolean('Should I shave?')):
-		hygiene.shave.call()
+		hygiene.shave.call(person)
 	if (person.day == 'sunday'):
 		if (askBoolean('Should I clip my nails?')):
-			hygiene.nail_clipping.call()
-	hygiene.deodorant.call()
+			hygiene.nail_clipping.call(person)
+	hygiene.deodorant.call(person)

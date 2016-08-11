@@ -1,2 +1,2 @@
-def call(item):
+def call(person, item):
 	print('pick %s' % item)

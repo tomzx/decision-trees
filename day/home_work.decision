@@ -4,13 +4,13 @@ import eat.lunch
 import generic.work
 import plan.home_work
 
-def call():
-	plan.home_work.call()
+def call(person):
+	plan.home_work.call(person)
 	print('record day plan video')
-	generic.work.call([])
-	eat.lunch.call()
-	generic.work.call([])
-	eat.dinner.call()
+	generic.work.call(person, [])
+	eat.lunch.call(person)
+	generic.work.call(person, [])
+	eat.dinner.call(person)
 	if (askBoolean('Is there work remaining for the day?')):
-		generic.work.call([])
+		generic.work.call(person, [])
 	print('record day completion video')

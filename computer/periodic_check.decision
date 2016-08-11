@@ -1,6 +1,10 @@
 import computer.browse
+import generic.go_to
 
-def call():
-	computer.browse.call('gmail.com')
-	computer.browse.call('reddit.com')
-	computer.browse.call('github.com')
+def call(person):
+	# Precondition
+	generic.go_to.call(person, 'computer')
+	# Actions
+	computer.browse.call(person, 'gmail.com')
+	computer.browse.call(person, 'reddit.com')
+	computer.browse.call(person, 'github.com')
