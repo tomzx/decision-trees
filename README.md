@@ -12,6 +12,24 @@ python 3.5 <=
 
 Start by taking a look at `main.decision`. From there, you will be guided to consult its subprograms and their subprograms and so on like a regular program.
 
+# Debugging/Tracing
+
+It can be useful to determine from where a certain input/output is emitted. In order to display a call stack for each input/ouput, you can pass the `--trace` argument when calling `main.decision`
+
+`python main.decision --trace`
+
+Which will output something like
+
+```
+> C:\decision-trees\day\routine.decision:24
+ > C:\decision-trees\daily\wake_up.decision:6
+switch mode to user/conscious
+> C:\decision-trees\day\routine.decision:24
+ > C:\decision-trees\daily\wake_up.decision:9
+What day is it? (monday,tuesday,wednesday,thursday,friday,saturday,sunday) (default: Thursday)
+[...]
+```
+
 ## Sources
 
 * https://en.wikipedia.org/wiki/Decision_tree
