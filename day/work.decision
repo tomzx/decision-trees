@@ -5,6 +5,7 @@ import dress.change
 import dress.dress
 import dress.undress
 import dress.pick_clothes
+from generic.ask import ask
 import generic.work
 import generic.go_to
 import eat.work_lunch
@@ -13,16 +14,22 @@ from location import Location
 
 def call(person):
 	print('get ready for work')
-	print('prepare lunch')
+	whatWillIEat = ask('Do I make myself a lunch or eat outside?')
+	if whatWillIEat == 'lunch':
+		print('prepare lunch')
 	dress.pick_clothes.call(person)
 	computer.sleep.call(person)
 	print('transit work (0900-0945)')
 	generic.go_to.call(person, Location.Work)
-	print('unpack lunch from backpack to fridge')
+	if whatWillIEat == 'lunch':
+		print('unpack lunch from backpack to fridge')
+	generic.go_to.call(person, 'work computer')
 	generic.work.call(person, [])
-	print('stand up (1100)')
+	print('stand up (1100-1115)')
+	generic.go_to.call(person, 'work computer')
 	generic.work.call(person, [])
 	eat.work_lunch.call(person)
+	generic.go_to.call(person, 'work computer')
 	generic.work.call(person, [])
 	print('transit home (1800-1845)')
 	generic.go_to.call(person, Location.Home)

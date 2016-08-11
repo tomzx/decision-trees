@@ -1,5 +1,6 @@
 import computer.browse
 from generic.askBoolean import askBoolean
+import generic.go_to
 
 def call(person):
 	# Precondition
