@@ -5,7 +5,7 @@ import dress.change
 import dress.dress
 import dress.undress
 import dress.pick_clothes
-from generic.ask import ask
+from generic.choose import choose
 import generic.work
 import generic.go_to
 import eat.work_lunch
@@ -14,7 +14,7 @@ from location import Location
 
 def call(person):
 	print('get ready for work')
-	whatWillIEat = ask('Do I make myself a lunch or eat outside?')
+	whatWillIEat = choose('Do I make myself a lunch or eat outside?', ['lunch', 'eat outside'], 'lunch')
 	if whatWillIEat == 'lunch':
 		print('prepare lunch')
 	dress.pick_clothes.call(person)

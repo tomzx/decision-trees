@@ -13,8 +13,8 @@ import day.home_work
 import day.off
 import dress.dress
 import eat.breakfast
-from generic.ask import ask
 from generic.askBoolean import askBoolean
+from generic.choose import choose
 import generic.go_to
 import generic.entertainment
 import health.exercise
@@ -34,7 +34,7 @@ def call(person):
 	dress.dress.call(person, Clothes.Shirt)
 	eat.breakfast.call(person) # (0715-0730)  the time is only true for work days
 	# this question is constrained by the current location
-	dayValue = ask('What type of day is it? (work, home work, off, uncommon)')
+	dayValue = choose('What type of day is it?', ['work', 'home work', 'off', 'uncommon'], 'uncommon')
 	if (dayValue == 'work'):
 			day.work.call(person)
 	elif (dayValue == 'home work'):
