@@ -40,6 +40,7 @@ builtins.input = input
 parser = argparse.ArgumentParser()
 parser.add_argument('--trace', help='Trace the source of an action', action='store_true')
 parser.add_argument('--trace-person', help='Trace the state of the person at each action', action='store_true')
+parser.add_argument('--debug-decision', help='Debug/Run a target decision then exit')
 args = parser.parse_args()
 
 if args.trace:
@@ -64,4 +65,8 @@ else:
 	def trace_person():
 		return
 
-day.routine.call(person)
+if args.debug_decision:
+	debugged_decision = importlib.import_module(args.debug_decision)
+	debugged_decision.call(person)
+else:
+	day.routine.call(person)
