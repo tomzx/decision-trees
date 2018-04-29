@@ -22,6 +22,8 @@ import generic.go_to
 import generic.entertainment
 import health.exercise
 import hygiene.buccal
+import weekly.buy_groceries
+import weekly.laundry
 
 def call(person):
 	daily.day.call(person)
@@ -48,6 +50,10 @@ def call(person):
 			day.off.call(person)
 	if (askBoolean('Is there time for entertainment?')):
 		generic.entertainment.call(person)
+	if (person.day in ['wednesday', 'sunday']):
+		weekly.laundry.call(person)
+	if (person.day in ['sunday']):
+		weekly.buy_groceries.call(person)
 	daily.github.call(person)
 	daily.anki.call(person)
 	if (askBoolean('Is there time for entertainment?')):
