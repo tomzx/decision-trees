@@ -14,18 +14,20 @@ from location import Location
 
 def call(person):
 	print('get ready for work')
-	whatWillIEat = choose('Do I make myself a lunch or eat outside?', ['lunch', 'eat outside'], 'lunch')
-	if whatWillIEat == 'lunch':
+	person.remember('will_eat', choose('Do I make myself a lunch or eat outside?', ['lunch', 'eat outside'], 'lunch'))
+	if person.recall('will_eat') == 'lunch':
 		print('prepare lunch')
-	dress.pick_clothes.call(person)
 	computer.sleep.call(person)
+	dress.pick_clothes.call(person)
 	print('transit work (0900-0945)')
 	generic.go_to.call(person, Location.Work)
-	if whatWillIEat == 'lunch':
-		print('unpack lunch from backpack to fridge')
+	if person.recall('will_eat') == 'lunch':
+		generic.pick.call('lunchbox', 'backpack')
+		generic.go_to.call(person, 'dinning room')
+		generic.put.call('lunchbox', 'fridge')
 	generic.go_to.call(person, 'work computer')
 	generic.work.call(person, [])
-	print('stand up (1100-1115)')
+	print('stand up (1000-1015)')
 	generic.go_to.call(person, 'work computer')
 	generic.work.call(person, [])
 	eat.work_lunch.call(person)

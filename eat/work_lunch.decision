@@ -1,22 +1,31 @@
 import eat.eat
 from generic.askBoolean import askBoolean
 import generic.go_to
+import generic.pick
+import generic.put
 from location import Location
 
 def call(person):
-	bringMeal = askBoolean('Did I bring a meal?')
-	if (bringMeal):
-		print('get lunchbox from fridge')
+	if person.recall('will_eat') == 'lunch':
+		generic.go_to.call(person, 'dinning room')
+		generic.pick.call(person, 'lunchbox', 'fridge')
+		generic.put.call(person, 'lunchbox', 'dinning table')
 		print('unpack lunchbox')
 		if (askBoolean('Does the meal require to be heated up?')):
 			print('heat up meal in microwave')
+		eat.eat.call(person)
+		print('throw away garbage')
+		generic.pick.call(person, 'lunchbox', 'dinning table')
+		generic.go_to.call(person, 'work desk')
+		generic.put.call(person, 'lunchbox', 'backpack')
 	else:
 		print('decide what/where to eat')
 		print('get out of office')
 		generic.go_to.call(person, 'restaurant')
 		print('order')
+		generic.pick.call(person, 'order')
 		generic.go_to.call(person, Location.Work)
-	eat.eat.call(person)
-	print('throw away garbage')
-	if (bringMeal):
-		print('put away lunchbox')
+		generic.go_to.call(person, 'dinning room')
+		generic.put.call(person, 'order', 'dinning table')
+		eat.eat.call(person)
+		print('throw away garbage')
