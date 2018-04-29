@@ -1,9 +1,9 @@
 from __future__ import print_function
+import argparse
 import imp # required by importlib
 import importlib
 from clothes import Clothes
 from person import Person
-import sys
 import inspect
 
 # Hook custom file extension so python can recognize and load it
@@ -37,7 +37,12 @@ def input(arg):
 
 builtins.input = input
 
-if '--trace' in sys.argv:
+parser = argparse.ArgumentParser()
+parser.add_argument('--trace', help='Trace the source of an action', action='store_true')
+parser.add_argument('--trace-person', help='Trace the state of the person at each action', action='store_true')
+args = parser.parse_args()
+
+if args.trace:
 	def trace(drop_frames=2):
 		current_frame = inspect.currentframe()
 		frames = inspect.getouterframes(current_frame, 9999)
@@ -52,7 +57,7 @@ person = Person()
 person.location = "bed"
 person.clothes.add(Clothes.Underwear)
 
-if '--trace-person' in sys.argv:
+if args.trace_person:
 	def trace_person():
 		_print(person)
 else:
