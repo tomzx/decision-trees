@@ -1,2 +1,5 @@
-def call(person, item, location):
-	print('drop {} in/on {}'.format(item, location))
+def call(person, item, location=None):
+	if location:
+		print('drop {} in/on {}'.format(item, location))
+	else:
+		print('drop {}'.format(item))
