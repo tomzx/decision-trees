@@ -5,6 +5,7 @@ import computer.wake_up
 import computer.periodic_check
 import daily.anki
 import daily.day
+import daily.day_type
 import daily.github
 import daily.hygiene
 import daily.location
@@ -28,6 +29,7 @@ import weekly.laundry
 def call(person):
 	daily.day.call(person)
 	daily.time.call(person)
+	daily.day_type.call(person)
 	daily.location.call(person)
 	daily.wake_up.call(person)
 
