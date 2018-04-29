@@ -2,9 +2,7 @@ from clothes import Clothes
 import dress.remove
 
 # params: to (remove everything until that part, included)
-def call(person, to):
-	# todo: possibly support some sort of planning of where the cloth item should be dropped
-
+def call(person, to, location=None):
 	# todo: support a more complicated/configurable state machine
 	clothes = [
 		Clothes.Gloves,
@@ -19,7 +17,7 @@ def call(person, to):
 	]
 
 	for cloth in clothes:
-		dress.remove.call(person, cloth)
+		dress.remove.call(person, cloth, location)
 		# todo: drop
 		if (cloth == to):
 			break

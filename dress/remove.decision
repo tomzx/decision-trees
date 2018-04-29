@@ -1,4 +1,7 @@
-def call(person, cloth):
+def call(person, cloth, location=None):
 	if cloth in person.clothes:
 		person.clothes.remove(cloth)
-		print('remove %s' % cloth)
+		if location:
+			print('remove {} and place in/on {}'.format(cloth, location))
+		else:
+			print('remove {}'.format(cloth))

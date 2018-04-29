@@ -3,9 +3,9 @@ import dress.wear
 import generic.go_to
 
 # params: to (put everything until that part, included)
-def call(person, to):
-	# todo: possibly support some sort of planning of where the cloth item should be taken from
-	generic.go_to.call(person, 'bedroom')
+def call(person, to, location=None):
+	location = 'bedroom closet' if location is None else location
+	generic.go_to.call(person, location)
 
 	# todo: support a more complicated/configurable state machine
 	clothes = [

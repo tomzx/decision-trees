@@ -4,10 +4,10 @@ import generic.put
 
 def call(person):
 	generic.go_to.call(person, 'bedroom closet')
-	generic.pick.call(person, 'clothes bin', 'floor')
+	generic.pick.call(person, 'laundry basket', 'floor')
 	generic.go_to.call(person, 'laundry room')
-	generic.put.call(person, 'clothes bin', 'floor')
-	generic.pick.call(person, 'clothes', 'clothes bin')
+	generic.put.call(person, 'laundry basket', 'floor')
+	generic.pick.call(person, 'clothes', 'laundry basket')
 	generic.go_to.call(person, 'laundry room')
 	generic.pick.call(person, 'detergent', 'cupboard')
 	generic.pick.call(person, 'dryer sheet', 'cupboard')
@@ -25,6 +25,6 @@ def call(person):
 	generic.go_to.call(person, 'bedroom closet')
 	generic.put.call(person, 'clothes', 'storage space')
 	generic.go_to.call(person, 'laundry room')
-	generic.pick.call(person, 'clothes bin', 'floor')
+	generic.pick.call(person, 'laundry basket', 'floor')
 	generic.go_to.call(person, 'bedroom closet')
-	generic.put.call(person, 'clothes bin', 'floor')
+	generic.put.call(person, 'laundry basket', 'floor')
