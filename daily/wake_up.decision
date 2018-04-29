@@ -1,14 +1,3 @@
-from generic.choose import choose
-from datetime import date
-import calendar
-
 def call(person):
 	print('switch mode to user/conscious')
-	today = date.today()
-	today = calendar.day_name[today.weekday()].lower()
-	day = choose('What day is it?', ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'], today)
-	person.day = day
 	print('open eyes')
-	location = choose('Where am I?', ['home', 'not home'], 'home')
-	location = location.lower()
-	person.location = location

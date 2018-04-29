@@ -1,0 +1,8 @@
+from generic.choose import choose
+from datetime import date
+import calendar
+
+def call(person):
+	location = choose('Where am I?', ['bedroom', 'computer room', 'kitchen', 'bathroom', 'living room', 'outside'], 'bedroom')
+	location = location.lower()
+	person.location = location

@@ -3,11 +3,14 @@ import computer.login
 import computer.sleep
 import computer.wake_up
 import computer.periodic_check
-import daily.wake_up
-import daily.hygiene
 import daily.anki
+import daily.day
 import daily.github
+import daily.hygiene
+import daily.location
 import daily.sleep
+import daily.time
+import daily.wake_up
 import day.work
 import day.home_work
 import day.off
@@ -21,6 +24,9 @@ import health.exercise
 import hygiene.buccal
 
 def call(person):
+	daily.day.call(person)
+	daily.time.call(person)
+	daily.location.call(person)
 	daily.wake_up.call(person)
 
 	if (person.location == 'home'):
@@ -33,13 +39,12 @@ def call(person):
 	daily.hygiene.call(person)
 	dress.dress.call(person, Clothes.Shirt)
 	eat.breakfast.call(person) # (0715-0730)  the time is only true for work days
-	# this question is constrained by the current location
-	dayValue = choose('What type of day is it?', ['work', 'home work', 'off', 'uncommon'], 'uncommon')
-	if (dayValue == 'work'):
+
+	if (person.day_type == 'work'):
 			day.work.call(person)
-	elif (dayValue == 'home work'):
+	elif (person.day_type == 'home work'):
 			day.home_work.call(person)
-	elif (dayValue == 'off'):
+	elif (person.day_type == 'off'):
 			day.off.call(person)
 	if (askBoolean('Is there time for entertainment?')):
 		generic.entertainment.call(person)

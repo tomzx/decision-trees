@@ -3,7 +3,7 @@ from clothes import Clothes
 import dress.dress
 import dress.undress
 import generic.go_to
-import generic.drop
+import generic.put
 import generic.pick
 
 def cleanWithHandTowel(bodyPart):
@@ -13,32 +13,34 @@ def dryTowel(bodyPart):
 	print('towel %s' % bodyPart)
 
 def call(person):
-	generic.go_to.call(person, 'my room')
+	generic.go_to.call(person, 'bedroom')
 	generic.pick.call(person, 'new underwear')
 	generic.go_to.call(person, 'bathroom')
-	generic.drop.call(person, 'new underwear', 'counter')
+	generic.put.call(person, 'new underwear', 'counter')
 	dress.undress.call(person, None)
 	generic.pick.call(person, 'towel')
 	generic.pick.call(person, 'hand towel')
-	generic.drop.call(person, 'towel', 'toilet seat')
-	generic.drop.call(person, 'hand towel', 'shower handle')
+	generic.put.call(person, 'towel', 'toilet seat')
+	generic.put.call(person, 'hand towel', 'shower handle')
 	print('start running water')
 	print('test water temperature')
 	print('close shower curtain')
 	print('start shower')
+	# TODO: Indicate that the shower is IN the bathroom (concept of containment)
 	generic.go_to.call(person, 'shower')
+	print('put shower gel in right hand')
+	cleanWithHandTowel(Body.Hair)
+	cleanWithHandTowel(Body.Face)
 	generic.pick.call(person, 'hand towel')
 	print('put shower gel on hand towel')
 	cleanWithHandTowel(Body.Torso)
 	cleanWithHandTowel(Body.LeftArm)
 	cleanWithHandTowel(Body.RightArm)
 	cleanWithHandTowel(Body.Genital)
-	cleanWithHandTowel(Body.LeftLeg)
 	cleanWithHandTowel(Body.RightLeg)
+	cleanWithHandTowel(Body.LeftLeg)
 	cleanWithHandTowel(Body.Back)
-	cleanWithHandTowel(Body.Face)
-	generic.drop.call(person, 'hand towel', 'bath rim')
-	cleanWithHandTowel(Body.Hair)
+	generic.put.call(person, 'hand towel', 'bath rim')
 	print('stop shower')
 	print('stop running water')
 	print('open shower curtain')
@@ -50,15 +52,16 @@ def call(person):
 	dryTowel(Body.LeftArm)
 	dryTowel(Body.RightArm)
 	print('get out of shower')
+	generic.go_to.call(person, 'bathroom')
 	dryTowel(Body.Genital)
 	dryTowel(Body.LeftLeg)
 	dryTowel(Body.RightLeg)
-	generic.drop.call(person, 'towel', 'toilet set')
+	generic.put.call(person, 'towel', 'toilet seat')
 	dress.dress.call(person, Clothes.Underwear) # todo: specify we are putting the new underwear
 	generic.pick.call(person, 'towel')
 	generic.pick.call(person, 'hand towel')
 	generic.pick.call(person, 'old underwear')
 	generic.go_to.call(person, 'laundry room/location')
-	generic.drop.call(person, 'towel', 'laundry basket')
-	generic.drop.call(person, 'hand towel', 'laundry basket')
-	generic.drop.call(person, 'old underwear', 'laundry basket')
+	generic.put.call(person, 'towel', 'laundry basket')
+	generic.put.call(person, 'hand towel', 'laundry basket')
+	generic.put.call(person, 'old underwear', 'laundry basket')

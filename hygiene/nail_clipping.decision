@@ -1,13 +1,13 @@
 import generic.go_to
 import generic.pick
+import generic.put
 
 def trimNail(nail):
 	print('trim %s' % nail)
 
 def call(person):
-	generic.go_to.call(person, 'my room')
-	generic.pick.call(person, 'nail clipper')
 	generic.go_to.call(person, 'bathroom')
+	generic.pick.call(person, 'nail clipper')
 	print('close toilet seat')
 	print('sit down on toilet seat')
 	print('bring trash bin close')
@@ -32,5 +32,4 @@ def call(person):
 	trimNail('right ring finger')
 	trimNail('right little finger')
 	print('put trash bin at its initial location')
-	generic.go_to.call(person, 'my room')
-	print('store nail clipper')
+	generic.pick.call(person, 'nail clipper', 'cupboard')

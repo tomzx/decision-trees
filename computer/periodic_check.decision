@@ -8,3 +8,7 @@ def call(person):
 	computer.browse.call(person, 'gmail.com')
 	computer.browse.call(person, 'reddit.com')
 	computer.browse.call(person, 'github.com')
+	computer.browse.call(person, 'twitch.com')
+	print('check omnifocus')
+	print('check hexchat')
+	print('check mail')

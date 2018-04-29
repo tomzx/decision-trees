@@ -1,7 +1,9 @@
+import generic.go_to
 import generic.drop
 import generic.pick
 
 def call(person):
+	generic.go_to.call(person, 'bathroom')
 	generic.pick.call(person, 'dental floss')
 	print('floss top gum from right to left')
 	print('floss bottom gum from right to left')

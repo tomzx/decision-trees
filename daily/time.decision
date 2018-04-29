@@ -1,0 +1,6 @@
+from generic.choose import choose
+from datetime import datetime
+
+def call(person):
+	now = datetime.now()
+	print('It is {}'.format(now.strftime('%H:%M:%S')))

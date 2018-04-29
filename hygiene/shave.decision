@@ -1,7 +1,7 @@
 import generic.go_to
 
 def call(person):
-	generic.go_to.call(person, 'my room')
+	generic.go_to.call(person, 'bedroom')
 	print('pick razor')
 	print('pick shaving cream')
 	generic.go_to.call(person, 'bathroom')
@@ -18,6 +18,6 @@ def call(person):
 	print('shave right cheek')
 	print('shave right sideburn')
 	print('clean razor')
-	generic.go_to.call(person, 'my room')
+	generic.go_to.call(person, 'bedroom')
 	print('store shaving cream')
 	print('store razor')

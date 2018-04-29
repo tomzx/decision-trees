@@ -1,5 +1,5 @@
 import generic.go_to
 
 def call(person):
-	generic.go_to.call(person, 'my room')
+	generic.go_to.call(person, 'bathroom')
 	print('put on deodorant')

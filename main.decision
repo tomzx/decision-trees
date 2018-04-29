@@ -49,6 +49,7 @@ else:
 		return
 
 person = Person()
+person.location = "bed"
 person.clothes.add(Clothes.Underwear)
 
 if '--trace-person' in sys.argv:

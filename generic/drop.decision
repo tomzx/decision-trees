@@ -1,2 +1,2 @@
 def call(person, item, location):
-	print('drop %s in/on %s' % (item, location))
+	print('drop {} in/on {}'.format(item, location))

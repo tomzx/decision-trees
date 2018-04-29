@@ -1,0 +1,5 @@
+from generic.choose import choose
+
+def call(person):
+	# this question is constrained by the current location
+	person.day_type = choose('What type of day is it?', ['work', 'home work', 'off', 'uncommon'], 'uncommon')

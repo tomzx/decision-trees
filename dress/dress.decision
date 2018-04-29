@@ -1,9 +1,11 @@
 from clothes import Clothes
 import dress.wear
+import generic.go_to
 
 # params: to (put everything until that part, included)
 def call(person, to):
 	# todo: possibly support some sort of planning of where the cloth item should be taken from
+	generic.go_to.call(person, 'bedroom')
 
 	# todo: support a more complicated/configurable state machine
 	clothes = [

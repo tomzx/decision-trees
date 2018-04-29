@@ -2,4 +2,4 @@ def call(person, location):
 	if (person.location == location):
 		return
 	person.location = location
-	print('go to %s' % location)
+	print('go to/in %s' % location)
