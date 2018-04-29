@@ -1,3 +1,5 @@
 # spoon, fork, knife handling procedure
 def call(person):
-	print('eat')
+	print('bring food to mouth')
+	print('chew')
+	print('ingest')

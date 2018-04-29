@@ -1,3 +1,4 @@
+import eat.eat
 from generic.askBoolean import askBoolean
 import generic.go_to
 from location import Location
@@ -15,7 +16,7 @@ def call(person):
 		generic.go_to.call(person, 'restaurant')
 		print('order')
 		generic.go_to.call(person, Location.Work)
-	print('eat meal')
+	eat.eat.call(person)
 	print('throw away garbage')
 	if (bringMeal):
 		print('put away lunchbox')
