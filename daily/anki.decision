@@ -6,15 +6,6 @@ def call(person):
 	# Actions
 	print('open anki')
 	deckChinese()
-	deckTom()
-
-
-def deckTom():
-	print('study deck Tom')
-	studied_cards = []
-	for card in studied_cards:
-		print('recall card')
-	print('record day statistics')
 
 def deckChinese():
 	print('study deck Chinese')

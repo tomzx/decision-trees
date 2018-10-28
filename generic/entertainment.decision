@@ -1,7 +1,3 @@
 def call(person):
-	print('twitch')
-	print('reddit')
 	print('gmail')
 	print('hexchat/irc')
-	print('piano')
-	print('bike')
