@@ -63,6 +63,7 @@ person = Person(
 		"locations": Memory(
 			{
 				location.BathRoom: True,
+				location.Bed: True,
 				location.BedRoom: True,
 				location.BedRoomCloset: True,
 				location.ComputerRoom: True,
@@ -80,8 +81,8 @@ else:
 	def trace_person():
 		return
 
-# Start in the bedroom
-person.location = location.BedRoom
+# Start in the bed
+person.location = location.Bed
 # Start with underwear
 person.clothes.add(Clothes.Underwear)
 person.items.add(Item(Clothes.Underwear, location.Person))

@@ -1,30 +1,15 @@
-import location
 from body import Body
-from clothes import Clothes
-import dress.dress
-import dress.undress
 import generic.go_to
 import generic.put
 import generic.pick
 
 from item import Item
-from location import BedRoomCloset, Person, Location, BathRoom
+from location import Person, Location
 
 def cleanWithHandTowel(bodyPart):
 	print('clean %s' % bodyPart)
 
-def dryTowel(bodyPart):
-	print('towel %s' % bodyPart)
-
 def call(person):
-	# generic.go_to.call(person, 'bedroom closet')
-	# generic.pick.call(person, 'new underwear')
-	generic.pick.call(person, Item('new underwear', BedRoomCloset))
-	generic.go_to.call(person, location.BathRoom)
-	generic.put.call(person, Item('new underwear', Person), Location('shelf'))
-	dress.undress.call(person, None, Location("bathroom floor"))
-	generic.pick.call(person, Item('towel', Location('shower curtain rod')))
-	generic.put.call(person, Item('towel', Person), Location('toilet seat'))
 	print('start running shower water')
 	print('test shower water temperature')
 	print('close shower curtain')
@@ -49,25 +34,3 @@ def call(person):
 	print('stop shower')
 	print('stop running water')
 	print('open shower curtain')
-	generic.pick.call(person, Item('towel', Location('toilet seat')))
-	dryTowel(Body.Hair)
-	dryTowel(Body.Face)
-	dryTowel(Body.Torso)
-	dryTowel(Body.Back)
-	dryTowel(Body.LeftArm)
-	dryTowel(Body.RightArm)
-	print('get out of shower')
-	generic.go_to.call(person, BathRoom)
-	dryTowel(Body.Genital)
-	dryTowel(Body.LeftLeg)
-	dryTowel(Body.RightLeg)
-	print('shake towel')
-	generic.put.call(person, Item('towel', Person), Location('shower curtain rod'))
-	dress.dress.call(person, Clothes.Underwear, Location('shelf')) # todo: specify we are putting the new underwear
-	generic.pick.call(person, Item('squeegee', Location('sink counter')))
-	print('remove water from the bath using the squeegee')
-	generic.put.call(person, Item('squeegee', Person), Location('sink counter'))
-	# TODO: Things that are picked and put seem like candidates for more abstract "transfer/move" decision
-	generic.pick.call(person, Item('old underwear', Person))
-	generic.go_to.call(person, 'bedroom closet')
-	generic.put.call(person, Item('old underwear', Person), Location('laundry basket'))

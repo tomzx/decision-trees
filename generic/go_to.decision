@@ -3,6 +3,9 @@ from typing import Union
 from location import Location, Person
 
 def call(person, location: Union[str, Location]):
+	if type(location) is str:
+		location = Location(location)
+
 	# We don't need to go anywhere if the location is ourselves
 	# TODO: Support going to a different person
 	if location == Person:

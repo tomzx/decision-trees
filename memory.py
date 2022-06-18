@@ -12,12 +12,12 @@ class Memory:
 
     def __getattr__(self, fact: str) -> Any:
         value = self.__dict__["memory"].get(fact)
-        print(f'Recalls {fact} is {value}')
+        # print(f'Recalls {fact} is {value}')
         return value
 
     def __setattr__(self, fact: str, value: str) -> None:
         # self.remember(fact, value)
-        print(f'Will remember {fact} is {value}')
+        # print(f'Will remember {fact} is {value}')
         self.__dict__["memory"][fact] = value
 
     def __getitem__(self, fact: str) -> Any:

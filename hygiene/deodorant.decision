@@ -6,4 +6,4 @@ from person import Person
 
 def call(person):
 	generic.pick.call(person, Item("deodorant", location.BathRoom))
-	generic.put.call(person, Item("deodorant", location.Person), Person)
+	generic.put.call(person, Item("deodorant", location.Person), location.Person)
