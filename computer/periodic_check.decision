@@ -5,8 +5,6 @@ def call(person):
 	# Precondition
 	generic.go_to.call(person, 'computer')
 	# Actions
-	computer.browse.call(person, 'gmail.com')
-	computer.browse.call(person, 'github.com')
-	print('check omnifocus')
-	print('check hexchat')
-	print('check mail')
+	print('check slack')
+	computer.browse.call(person, 'https://mail.google.com/mail/u/0/#inbox')
+	print('check irc')

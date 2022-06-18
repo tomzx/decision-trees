@@ -5,8 +5,8 @@ def brush(teeth):
 	print('brush %s teeth' % teeth)
 
 def call(person):
-	generic.pick.call(person, 'toothbrush')
-	generic.pick.call(person, 'toothpaste')
+	generic.pick.call(person, 'toothbrush', 'dental kit')
+	generic.pick.call(person, 'toothpaste', 'dental kit')
 	print('apply toothpaste to toothbrush')
 	generic.put.call(person, 'toothpaste', 'dental kit')
 	print('apply water to toothbrush')

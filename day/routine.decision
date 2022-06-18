@@ -50,15 +50,13 @@ def call(person):
 			day.home_work.call(person)
 	elif (person.day_type == 'off'):
 			day.off.call(person)
-	if (askBoolean('Is there time for entertainment?')):
+	if (askBoolean('Is there time for entertainment?', 'no')):
 		generic.entertainment.call(person)
 	if (person.day in ['wednesday', 'sunday']):
 		weekly.laundry.call(person)
 	if (person.day in ['sunday']):
 		weekly.buy_groceries.call(person)
-	daily.github.call(person)
-	daily.anki.call(person)
-	if (askBoolean('Is there time for entertainment?')):
+	if (askBoolean('Is there time for entertainment?', 'no')):
 		generic.entertainment.call(person)
 	hygiene.buccal.call(person)
 	computer.sleep.call(person)
