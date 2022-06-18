@@ -2,6 +2,6 @@ def call(person, cloth, location=None):
 	if cloth in person.clothes:
 		person.clothes.remove(cloth)
 		if location:
-			print('remove {} and place in/on {}'.format(cloth, location))
+			print(f'remove {cloth} and place in/on {location}')
 		else:
-			print('remove {}'.format(cloth))
+			print(f'remove {cloth}')
