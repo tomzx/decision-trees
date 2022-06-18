@@ -1,4 +1,5 @@
 def call(person, item, location=None):
+	person.items.remove(item)
 	if location:
 		print(f'put {item} in/on {location}')
 	else:

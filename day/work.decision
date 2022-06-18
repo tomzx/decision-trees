@@ -10,18 +10,18 @@ import generic.work
 import generic.go_to
 import eat.work_lunch
 import eat.dinner
-from location import Location
+from location import Location, Work, Home
 
 def call(person):
 	print('get ready for work')
-	person.remember('will_eat', choose('Do I make myself a lunch or eat outside?', ['lunch', 'eat outside'], 'lunch'))
-	if person.recall('will_eat') == 'lunch':
+	person.memory.remember('will_eat', choose('Do I make myself a lunch or eat outside?', ['lunch', 'eat outside'], 'lunch'))
+	if person.memory.recall('will_eat') == 'lunch':
 		print('prepare lunch')
 	computer.sleep.call(person)
 	dress.pick_clothes.call(person)
 	print('transit work (0900-0945)')
-	generic.go_to.call(person, Location.Work)
-	if person.recall('will_eat') == 'lunch':
+	generic.go_to.call(person, Work)
+	if person.memory.recall('will_eat') == 'lunch':
 		generic.pick.call('lunchbox', 'backpack')
 		generic.go_to.call(person, 'dinning room')
 		generic.put.call('lunchbox', 'fridge')
@@ -34,7 +34,7 @@ def call(person):
 	generic.go_to.call(person, 'work computer')
 	generic.work.call(person, [])
 	print('transit home (1800-1845)')
-	generic.go_to.call(person, Location.Home)
+	generic.go_to.call(person, Home)
 	dress.undress.call(person, Clothes.Shoes)
 	dress.change.call(person, Clothes.Pants, Clothes.Shorts)
 	computer.wake_up.call(person)

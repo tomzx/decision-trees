@@ -1,5 +1,5 @@
 import generic.go_to
-from location import Location
+from location import Home
 
 def call(person):
 	generic.go_to.call(person, 'groceries store')
@@ -8,4 +8,4 @@ def call(person):
 	print('shop for freezer temperature food')
 	print('queue for register')
 	generic.go_to.call(person, 'groceries store register')
-	generic.go_to.call(person, Location.Home)
+	generic.go_to.call(person, Home)

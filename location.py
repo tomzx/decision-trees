@@ -1,5 +1,8 @@
 from enum import Enum
 
-class Location(Enum):
-	Home = 1
-	Work = 2
+class Location:
+	def __init__(self, name: str) -> None:
+		self.name = name
+
+Home = Location("home")
+Work = Location("Work")

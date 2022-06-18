@@ -3,10 +3,10 @@ from generic.askBoolean import askBoolean
 import generic.go_to
 import generic.pick
 import generic.put
-from location import Location
+from location import Work
 
 def call(person):
-	if person.recall('will_eat') == 'lunch':
+	if person.memory.recall('will_eat') == 'lunch':
 		generic.go_to.call(person, 'dinning room')
 		generic.pick.call(person, 'lunchbox', 'fridge')
 		generic.put.call(person, 'lunchbox', 'dinning table')
@@ -24,7 +24,7 @@ def call(person):
 		generic.go_to.call(person, 'restaurant')
 		print('order')
 		generic.pick.call(person, 'order')
-		generic.go_to.call(person, Location.Work)
+		generic.go_to.call(person, Work)
 		generic.go_to.call(person, 'dinning room')
 		generic.put.call(person, 'order', 'dinning table')
 		eat.eat.call(person)
