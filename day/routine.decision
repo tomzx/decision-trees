@@ -1,3 +1,4 @@
+import location
 from clothes import Clothes
 import computer.login
 import computer.sleep
@@ -26,6 +27,7 @@ import hygiene.buccal
 import weekly.buy_groceries
 import weekly.laundry
 
+from location import Home
 from person import Person
 
 def call(person: Person):
@@ -35,7 +37,7 @@ def call(person: Person):
 	daily.location.call(person)
 	daily.wake_up.call(person)
 
-	if person.location == 'home':
+	if person.location == Home:
 		generic.go_to.call(person, 'computer')
 		computer.wake_up.call(person)
 		computer.login.call(person)
@@ -43,7 +45,7 @@ def call(person: Person):
 	if person.memory.day in ['wednesday', 'friday', 'sunday']:
 		health.exercise.call(person)
 	daily.hygiene.call(person)
-	dress.dress.call(person, Clothes.Shirt)
+	dress.dress.call(person, Clothes.Shirt, location.BedRoomCloset)
 	eat.breakfast.call(person)  # (0715-0730)  the time is only true for work days
 
 	if person.memory.day_type == 'work':

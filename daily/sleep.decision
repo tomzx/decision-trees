@@ -8,4 +8,6 @@ def call(person):
 	generic.go_to.call(person, 'bed')
 	print('lay on horizontal flat surface')
 	print('close eyes')
+	person.state["eyes"] = "closed"
 	print('switch mode to system/unconscious')
+	person.state["overall"] = "asleep"

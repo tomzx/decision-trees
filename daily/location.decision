@@ -1,8 +1,9 @@
 from generic.choose import choose
-from datetime import date
-import calendar
+
+from location import BedRoom, ComputerRoom, Kitchen, BathRoom, LivingRoom, Outside
 
 def call(person):
-	location = choose('Where am I?', ['bedroom', 'computer room', 'kitchen', 'bathroom', 'living room', 'outside'], 'bedroom')
-	location = location.lower()
+	location = choose('Where am I?', [BedRoom, ComputerRoom, Kitchen, BathRoom, LivingRoom, Outside], BedRoom)
 	person.location = location
+	person.memory.location = location
+	person.memory.locations[location] = True

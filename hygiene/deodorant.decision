@@ -1,5 +1,9 @@
 import generic.go_to
 
+import location
+from item import Item
+from person import Person
+
 def call(person):
-	generic.go_to.call(person, 'bathroom')
-	print('put on deodorant')
+	generic.pick.call(person, Item("deodorant", location.BathRoom))
+	generic.put.call(person, Item("deodorant", location.Person), Person)

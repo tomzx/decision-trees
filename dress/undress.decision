@@ -1,8 +1,13 @@
+from typing import Optional
+
 from clothes import Clothes
 import dress.remove
 
 # params: to (remove everything until that part, included)
-def call(person, to, location=None):
+from location import Location
+
+# TODO: Convert to Items
+def call(person, to, location: Optional[Location] = None):
 	# todo: support a more complicated/configurable state machine
 	clothes = [
 		Clothes.Gloves,

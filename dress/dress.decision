@@ -1,9 +1,14 @@
+from typing import Optional
+
 from clothes import Clothes
 import dress.wear
 import generic.go_to
 
 # params: to (put everything until that part, included)
-def call(person, to, location=None):
+from location import Location
+
+# TODO: Convert to Items
+def call(person, to, location: Location):
 	location = 'bedroom closet' if location is None else location
 	generic.go_to.call(person, location)
 
@@ -22,6 +27,6 @@ def call(person, to, location=None):
 
 	for cloth in clothes:
 		# todo: pick
-		dress.wear.call(person, cloth)
+		dress.wear.call(person, cloth, location)
 		if cloth == to:
 			break

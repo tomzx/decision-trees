@@ -1,8 +1,12 @@
 from __future__ import print_function
 import argparse
-import imp # required by importlib
+import imp  # required by importlib
 import importlib
+
+import location
 from clothes import Clothes
+from item import Item
+from memory import Memory
 from person import Person
 import inspect
 
@@ -24,7 +28,7 @@ _print = print
 def print(*args, **kwargs):
 	trace_person()
 	trace()
-	_print(*args, **kwargs)
+	_print(f"\033[1m{args[0]}\033[0m", *args[1:], **kwargs)
 
 builtins.print = print
 
@@ -33,7 +37,7 @@ _input = input
 def input(arg):
 	trace_person()
 	trace(3)
-	return _input("%s" % arg)
+	return _input(f"\033[1m{arg}\033[0m")
 
 builtins.input = input
 
@@ -49,14 +53,25 @@ if args.trace:
 		frames = inspect.getouterframes(current_frame, 9999)
 		# Ignore drop_frames from the end as we do not want to display this function and its caller (print/input) in the stack and do not print the main.decision entry point
 		for (i, frame) in enumerate(reversed(frames[drop_frames:-1])):
-			_print("%s> %s:%s" % (" "*i, frame.filename, frame.lineno))
+			_print("%s> %s:%s" % (" " * i, frame.filename, frame.lineno))
 else:
 	def trace(drop_frames=0):
 		return
 
-person = Person()
-person.location = "bed"
-person.clothes.add(Clothes.Underwear)
+person = Person(
+	{
+		"locations": Memory(
+			{
+				location.BathRoom: True,
+				location.BedRoom: True,
+				location.BedRoomCloset: True,
+				location.ComputerRoom: True,
+				location.Kitchen: True,
+				location.LivingRoom: True,
+			}
+		)
+	}
+)
 
 if args.trace_person:
 	def trace_person():
@@ -64,6 +79,13 @@ if args.trace_person:
 else:
 	def trace_person():
 		return
+
+# Start in the bedroom
+person.location = location.BedRoom
+# Start with underwear
+person.clothes.add(Clothes.Underwear)
+person.items.add(Item(Clothes.Underwear, location.Person))
+# Set some memories
 
 if args.debug_decision:
 	debugged_decision = importlib.import_module(args.debug_decision)

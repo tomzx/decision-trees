@@ -10,6 +10,8 @@ import generic.work
 import generic.go_to
 import eat.work_lunch
 import eat.dinner
+
+from item import Item
 from location import Location, Work, Home
 
 def call(person):
@@ -22,7 +24,7 @@ def call(person):
 	print('transit work (0900-0945)')
 	generic.go_to.call(person, Work)
 	if person.memory.recall('will_eat') == 'lunch':
-		generic.pick.call('lunchbox', 'backpack')
+		generic.pick.call(person, Item('lunchbox', Location('backpack')))
 		generic.go_to.call(person, 'dinning room')
 		generic.put.call('lunchbox', 'fridge')
 	generic.go_to.call(person, 'work computer')
