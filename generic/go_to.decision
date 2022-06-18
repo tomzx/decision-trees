@@ -4,4 +4,6 @@ def call(person, location: Location):
 	if person.location == location:
 		return
 	person.location = location
+	person.memory.location = location
+	person.memory.locations[location] = True
 	print(f'go to/in {location}')
