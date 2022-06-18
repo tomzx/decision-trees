@@ -19,5 +19,5 @@ def call(person, to, location=None):
 	for cloth in clothes:
 		dress.remove.call(person, cloth, location)
 		# todo: drop
-		if (cloth == to):
+		if cloth == to:
 			break

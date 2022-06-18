@@ -26,37 +26,39 @@ import hygiene.buccal
 import weekly.buy_groceries
 import weekly.laundry
 
-def call(person):
+from person import Person
+
+def call(person: Person):
 	daily.day.call(person)
 	daily.time.call(person)
 	daily.day_type.call(person)
 	daily.location.call(person)
 	daily.wake_up.call(person)
 
-	if (person.location == 'home'):
+	if person.location == 'home':
 		generic.go_to.call(person, 'computer')
 		computer.wake_up.call(person)
 		computer.login.call(person)
 		computer.periodic_check.call(person)
-	if (person.day in ['wednesday', 'friday', 'sunday']):
+	if person.memory.day in ['wednesday', 'friday', 'sunday']:
 		health.exercise.call(person)
 	daily.hygiene.call(person)
 	dress.dress.call(person, Clothes.Shirt)
-	eat.breakfast.call(person) # (0715-0730)  the time is only true for work days
+	eat.breakfast.call(person)  # (0715-0730)  the time is only true for work days
 
-	if (person.day_type == 'work'):
-			day.work.call(person)
-	elif (person.day_type == 'home work'):
-			day.home_work.call(person)
-	elif (person.day_type == 'off'):
-			day.off.call(person)
-	if (askBoolean('Is there time for entertainment?', 'no')):
+	if person.memory.day_type == 'work':
+		day.work.call(person)
+	elif person.memory.day_type == 'home work':
+		day.home_work.call(person)
+	elif person.memory.day_type == 'off':
+		day.off.call(person)
+	if askBoolean('Is there time for entertainment?', 'no'):
 		generic.entertainment.call(person)
-	if (person.day in ['wednesday', 'sunday']):
+	if person.memory.day in ['wednesday', 'sunday']:
 		weekly.laundry.call(person)
-	if (person.day in ['sunday']):
+	if person.memory.day in ['sunday']:
 		weekly.buy_groceries.call(person)
-	if (askBoolean('Is there time for entertainment?', 'no')):
+	if askBoolean('Is there time for entertainment?', 'no'):
 		generic.entertainment.call(person)
 	hygiene.buccal.call(person)
 	computer.sleep.call(person)

@@ -6,7 +6,7 @@ def call(person):
 	# Precondition
 	generic.go_to.call(person, 'computer')
 
-	if(askBoolean('Did I commit something on github today?', 'no')):
+	if askBoolean('Did I commit something on github today?', 'no'):
 		return
 
 	# Actions

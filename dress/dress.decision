@@ -23,5 +23,5 @@ def call(person, to, location=None):
 	for cloth in clothes:
 		# todo: pick
 		dress.wear.call(person, cloth)
-		if (cloth == to):
+		if cloth == to:
 			break

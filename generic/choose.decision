@@ -2,7 +2,7 @@ def choose(question, options = [], default = None):
 	textOptions = list(map(str, options))
 	text = question
 	if options:
-		text = text + ' (' +(', ').join(textOptions) + ')'
+		text = text + ' (' + ', '.join(textOptions) + ')'
 
 	if default:
 		text = text + ' (default: ' + str(default) + ')'

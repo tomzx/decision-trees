@@ -11,7 +11,7 @@ def call(person):
 		generic.pick.call(person, 'lunchbox', 'fridge')
 		generic.put.call(person, 'lunchbox', 'dinning table')
 		print('unpack lunchbox')
-		if (askBoolean('Does the meal require to be heated up?')):
+		if askBoolean('Does the meal require to be heated up?'):
 			print('heat up meal in microwave')
 		eat.eat.call(person)
 		print('throw away garbage')
