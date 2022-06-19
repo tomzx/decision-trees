@@ -37,7 +37,7 @@ def call(person: Person):
     daily.wake_up.call(person)
 
     if person.location == Home:
-        generic.go_to.call(person, "computer")
+        generic.go_to.call(person, location.Computer)
         computer.wake_up.call(person)
         computer.login.call(person)
         computer.periodic_check.call(person)
