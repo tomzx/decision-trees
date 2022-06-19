@@ -39,7 +39,7 @@ if args.trace:
 	def trace(drop_frames=2):
 		current_frame = inspect.currentframe()
 		frames = inspect.getouterframes(current_frame, 9999)
-		# Ignore drop_frames from the end as we do not want to display this function and its caller (print/input) in the stack and do not print the main.decision entry point
+		# Ignore drop_frames from the end as we do not want to display this function and its caller (print/input) in the stack and do not print the main.py entry point
 		for (i, frame) in enumerate(reversed(frames[drop_frames:-1])):
 			_print("%s> %s:%s" % (" " * i, frame.filename, frame.lineno))
 else:
