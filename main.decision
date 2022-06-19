@@ -1,7 +1,6 @@
 from __future__ import print_function
 import argparse
-import imp  # required by importlib
-import importlib
+import builtins
 
 import location
 from clothes import Clothes
@@ -10,18 +9,7 @@ from memory import Memory
 from person import Person
 import inspect
 
-# Hook custom file extension so python can recognize and load it
-
-importlib.machinery.SOURCE_SUFFIXES.insert(0, '.decision')
-
-# print(importlib.machinery.all_suffixes())
-
 import day.routine
-
-try:
-	import __builtin__ as builtins  # Python 2
-except ImportError:
-	import builtins  # Python 3
 
 _print = print
 
