@@ -7,11 +7,11 @@ class ItemCollection:
 
     def add(self, item: Item) -> None:
         self.items[item] = True
-        print(self.items)
+        # print(self.items)
 
     def remove(self, item: Item) -> None:
         del self.items[item]
-        print(self.items)
+        # print(self.items)
 
     def has(self, item: Item) -> bool:
         return self.items.get(item, False)

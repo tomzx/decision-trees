@@ -1,5 +1,6 @@
 from typing import Any, Dict
 
+
 class Memory:
     def __init__(self, memories: Dict[str, Any]):
         self.__dict__["memory"] = memories

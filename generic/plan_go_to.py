@@ -1,3 +1,4 @@
 def call(person, location):
-	# plan
-	# use a threshold/limit to determine if the plan should abort if it's too far
+    pass
+    # plan
+    # use a threshold/limit to determine if the plan should abort if it's too far

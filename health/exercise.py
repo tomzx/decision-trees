@@ -1,2 +1,2 @@
 def call(person):
-	print('exercise')
+    print("exercise")

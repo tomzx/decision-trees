@@ -1,2 +1,2 @@
 def ask(question):
-	return input(question)
+    return input(question)
