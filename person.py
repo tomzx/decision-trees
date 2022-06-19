@@ -4,7 +4,7 @@ from item_collection import ItemCollection
 from memory import Memory
 
 
-class Person(object):
+class Person:
     def __init__(self, memories: Dict[str, Any]) -> None:
         self.location = None
         self.clothes = set()

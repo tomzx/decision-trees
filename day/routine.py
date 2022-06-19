@@ -25,7 +25,6 @@ import weekly.buy_groceries
 import weekly.laundry
 from clothes import Clothes
 from generic.askBoolean import askBoolean
-from generic.choose import choose
 from location import Home
 from person import Person
 
@@ -42,8 +41,7 @@ def call(person: Person):
         computer.wake_up.call(person)
         computer.login.call(person)
         computer.periodic_check.call(person)
-    if person.memory.day in ["wednesday", "friday", "sunday"]:
-        health.exercise.call(person)
+
     daily.hygiene.call(person)
     dress.dress.call(person, Clothes.Shirt, location.BedRoomCloset)
     eat.breakfast.call(person)  # (0715-0730)  the time is only true for work days
@@ -56,7 +54,8 @@ def call(person: Person):
         day.off.call(person)
     if askBoolean("Is there time for entertainment?", "no"):
         generic.entertainment.call(person)
-    if person.memory.day in ["wednesday", "sunday"]:
+    health.exercise.call(person)
+    if person.memory.day in ["sunday"]:
         weekly.laundry.call(person)
     if person.memory.day in ["sunday"]:
         weekly.buy_groceries.call(person)

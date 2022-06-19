@@ -12,10 +12,11 @@ def trimNail(nail):
 
 def call(person):
     generic.go_to.call(person, location.BathRoom)
-    generic.pick.call(person, Item("nail clipper"), Location("cupboard"))
+    generic.pick.call(person, Item("nail clipper", Location("cupboard")))
     print("close toilet seat")
     print("sit down on toilet seat")
-    print("bring trash bin close")
+    generic.pick.call(person, Item("trash bin", location.Kitchen))
+    generic.put.call(person, Item("trash bin", location.Person), location.BathRoom)
     trimNail("left little toe")
     trimNail("left ring toe")
     trimNail("left middle toe")
@@ -36,5 +37,8 @@ def call(person):
     trimNail("right middle finger")
     trimNail("right ring finger")
     trimNail("right little finger")
-    print("put trash bin at its initial location")
-    generic.put.call(person, Item("nail clipper", Location("cupboard")))
+    generic.pick.call(person, Item("trash bin", location.BathRoom))
+    generic.put.call(person, Item("trash bin", location.Person), location.Kitchen)
+    generic.put.call(
+        person, Item("nail clipper", location.Person), Location("cupboard")
+    )

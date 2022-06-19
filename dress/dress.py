@@ -1,8 +1,7 @@
+import dress.wear
 import generic.go_to
 from clothes import Clothes
 from location import Location
-
-import dress.wear
 
 
 # TODO: Convert to Items

@@ -1,9 +1,8 @@
 from typing import Optional
 
+import dress.remove
 from clothes import Clothes
 from location import Location
-
-import dress.remove
 
 
 # TODO: Convert to Items

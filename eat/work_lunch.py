@@ -1,4 +1,5 @@
 import eat.eat
+import eat.lunch
 import generic.go_to
 import generic.pick
 import generic.put
@@ -9,20 +10,9 @@ from location import Location, Work
 
 def call(person):
     if person.memory.recall("will_eat") == "lunch":
-        generic.go_to.call(person, "dinning room")
-        generic.pick.call(person, Item("lunchbox", Location("fridge")))
-        generic.put.call(person, Item("lunchbox", Location("dinning table")))
-        print("unpack lunchbox")
-        if askBoolean("Does the meal require to be heated up?"):
-            print("heat up meal in microwave")
-        eat.eat.call(person)
-        print("throw away garbage")
-        generic.pick.call(person, Item("lunchbox", Location("dinning table")))
-        generic.go_to.call(person, "work desk")
-        generic.put.call(person, "lunchbox", "backpack")
+        eat.lunch.call(person)
     else:
         print("decide what/where to eat")
-        print("get out of office")
         generic.go_to.call(person, "restaurant")
         print("order")
         generic.pick.call(person, Item("order", Location("restaurant")))

@@ -1,5 +1,13 @@
 from generic.choose import choose
-from location import BathRoom, BedRoom, ComputerRoom, Kitchen, LivingRoom, Outside
+from location import (
+    BathRoom,
+    BedRoom,
+    ComputerRoom,
+    Kitchen,
+    LivingRoom,
+    Location,
+    Outside,
+)
 
 
 def call(person):
@@ -8,6 +16,6 @@ def call(person):
         [BedRoom, ComputerRoom, Kitchen, BathRoom, LivingRoom, Outside],
         BedRoom,
     )
-    person.location = location
+    person.location = Location(str(location))
     person.memory.location = location
     person.memory.locations[location] = True
