@@ -1,12 +1,15 @@
 [tool.poetry]
 name = "decision-trees"
-version = "0.1.0"
-description = "Decision trees is my attempt at the introspection and modeling of my own decisions processes."
+version = "0.2.0"
+description = "A Personal Decision Intelligence System for modeling, tracking, and optimizing your daily decision-making processes."
 authors = ["Tom Rochette <tom@tomrochette.com>"]
 license = "MIT"
+readme = "README.md"
+keywords = ["decision-making", "routines", "habits", "productivity", "introspection"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+pyyaml = "^6.0"
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"

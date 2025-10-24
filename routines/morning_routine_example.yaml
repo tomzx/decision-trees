@@ -1,0 +1,95 @@
+# Example Morning Routine Configuration
+# This demonstrates the declarative approach to defining decision trees
+
+name: "Morning Routine"
+version: "1.0"
+author: "User"
+description: "Standard morning routine for weekdays"
+tags:
+  - daily
+  - morning
+  - essential
+
+# Context requirements (optional)
+context_requirements:
+  location:
+    - Bed
+    - BedRoom
+  time_range:
+    start: "06:00"
+    end: "10:00"
+
+# Stop execution if any step fails
+stop_on_failure: false
+
+# Sequence of decisions
+sequence:
+  # Wake up decision
+  - decision: daily.wake_up
+    name: "Wake Up"
+    required: true
+    description: "Initial wake-up process"
+
+  # Bathroom routine
+  - name: "Morning Hygiene"
+    sequence:
+      - decision: hygiene.teeth
+        name: "Brush Teeth"
+
+      - decision: hygiene.shower
+        name: "Shower"
+        optional: false
+
+      - decision: hygiene.deodorant
+        name: "Apply Deodorant"
+
+  # Get dressed based on weather
+  - name: "Get Dressed"
+    decision: dress.dress
+    description: "Choose and wear appropriate clothing"
+    context:
+      weather_aware: true
+
+  # Breakfast (conditional on time)
+  - name: "Breakfast Decision"
+    conditional:
+      type: time_range
+      start: "06:00"
+      end: "09:00"
+      if_true:
+        decision: eat.breakfast
+        name: "Eat Breakfast"
+      if_false:
+        name: "Skip Breakfast"
+        notes: "Too late for breakfast"
+
+  # Check computer/email (time-limited)
+  - decision: computer.check_email
+    name: "Check Email"
+    time_limit: 15  # minutes
+    optional: true
+
+  # Prepare for work
+  - name: "Prepare to Leave"
+    conditional:
+      type: day_type
+      day_type: "workday"
+      if_true:
+        sequence:
+          - decision: plan.work
+            name: "Plan Work Day"
+          - decision: travel.commute
+            name: "Commute to Work"
+
+# Goals this routine supports
+goal_alignment:
+  - goal_id: "health_routine"
+    weight: 0.8
+  - goal_id: "productivity"
+    weight: 0.6
+
+# Estimated duration
+estimated_duration: 90  # minutes
+
+# Energy requirements
+energy_requirement: "moderate"

@@ -1,0 +1,139 @@
+# Example User Profile
+# Customize this file to personalize your decision-making experience
+
+name: "Tom Rochette"
+
+# Personal preferences
+preferences:
+  # Time preferences
+  default_wake_time: "07:00"
+  default_sleep_time: "23:00"
+  preferred_breakfast_time: "07:30"
+  preferred_exercise_time: "evening"  # morning, afternoon, evening
+
+  # Frequency preferences
+  exercise_frequency: 4  # times per week
+  meal_prep_frequency: 2  # times per week
+
+  # Work schedule
+  work_days:
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+  work_start_time: "09:00"
+  work_end_time: "17:00"
+
+  # Commute
+  default_commute_method: "metro"
+  commute_duration: 30  # minutes
+
+  # Decision-making style
+  decision_speed: "thoughtful"  # quick, moderate, thoughtful
+  prefer_defaults: true  # Use learned defaults when available
+  reminder_style: "gentle"  # gentle, standard, assertive
+
+# Active goals
+goals:
+  - id: "health_routine"
+    name: "Maintain Healthy Routine"
+    description: "Exercise regularly and maintain good hygiene habits"
+    target_value: 30  # days of consistent routine
+    current_value: 0
+    priority: "important"
+    tags:
+      - health
+      - daily
+
+  - id: "productivity"
+    name: "Improve Work Productivity"
+    description: "Complete daily work tasks efficiently"
+    target_value: 100  # productive hours
+    current_value: 0
+    priority: "important"
+    tags:
+      - work
+      - productivity
+
+  - id: "learning"
+    name: "Daily Learning"
+    description: "Spend time learning new skills"
+    target_value: 50  # hours
+    current_value: 0
+    priority: "recommended"
+    tags:
+      - personal_development
+      - learning
+
+  - id: "work_life_balance"
+    name: "Work-Life Balance"
+    description: "Maintain healthy balance between work and personal time"
+    target_value: 7  # balanced weeks
+    current_value: 0
+    priority: "critical"
+    tags:
+      - balance
+      - wellbeing
+
+# Routine assignments
+routines:
+  morning: "morning_routine"
+  evening: "evening_routine"
+  workday: "workday_routine"
+  weekend: "weekend_routine"
+
+# Customizations for specific decisions
+customizations:
+  # Clothing preferences
+  clothing:
+    default_style: "casual_professional"
+    cold_weather_threshold: 10  # celsius
+    rain_gear_threshold: 50  # percent chance
+
+  # Food preferences
+  food:
+    dietary_restrictions: []
+    favorite_breakfast: "oatmeal"
+    coffee_preference: "black"
+
+  # Exercise preferences
+  exercise:
+    preferred_activities:
+      - "running"
+      - "cycling"
+      - "gym"
+    workout_duration: 45  # minutes
+
+  # Work preferences
+  work:
+    deep_work_blocks: 2  # number per day
+    deep_work_duration: 90  # minutes
+    preferred_break_frequency: 60  # minutes
+
+# Learning settings
+learning:
+  enabled: true
+  adaptation_speed: "moderate"  # slow, moderate, fast
+  collect_satisfaction_feedback: true
+  auto_optimize_defaults: true
+
+# Integration settings (for future use)
+integrations:
+  calendar:
+    enabled: false
+    sync_frequency: 60  # minutes
+
+  weather:
+    enabled: false
+    location: "Montreal, QC"
+
+  health_tracking:
+    enabled: false
+    device: null
+
+# Privacy settings
+privacy:
+  store_history: true
+  history_retention_days: 365
+  share_anonymous_data: false
